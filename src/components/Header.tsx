@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { MobileNavMenu } from "@/components/MobileNavMenu";
 import {
@@ -13,9 +14,15 @@ import { PRIMARY_SITE_NAV } from "@/lib/site-nav";
 
 export function Header() {
   const { theme, toggleTheme } = useTheme();
-  const isDark = theme === "dark";
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = theme === "dark";
 
   return (
     <header className="luxe-glass-nav sticky top-0 z-50">
@@ -58,16 +65,27 @@ export function Header() {
           >
             <button
               type="button"
-              onClick={toggleTheme}
-              disabled={!THEME_TOGGLE_VISIBLE}
-              tabIndex={THEME_TOGGLE_VISIBLE ? 0 : -1}
+              onClick={mounted ? toggleTheme : undefined}
+              disabled={!THEME_TOGGLE_VISIBLE || !mounted}
+              tabIndex={THEME_TOGGLE_VISIBLE && mounted ? 0 : -1}
               className="inline-flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-luxe-md border border-luxe bg-luxe-muted text-luxe-text shadow-luxe-soft transition duration-luxe ease-luxe hover:border-luxe-strong hover:bg-luxe-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--luxe-focus-ring)]"
-              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              aria-label={
+                mounted
+                  ? isDark
+                    ? "Switch to light mode"
+                    : "Switch to dark mode"
+                  : "Toggle theme"
+              }
+              aria-hidden={!THEME_TOGGLE_VISIBLE || !mounted}
             >
-              {isDark ? (
-                <Sun className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+              {mounted ? (
+                isDark ? (
+                  <Sun className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+                ) : (
+                  <Moon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+                )
               ) : (
-                <Moon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+                <span className="block h-5 w-5" aria-hidden />
               )}
             </button>
           </div>

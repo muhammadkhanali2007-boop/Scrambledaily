@@ -1,0 +1,153 @@
+/**
+ * Homepage SEO article — below the game section.
+ * Uses the site-wide luxe color tokens (same as Unscramble / Anagram pages).
+ */
+
+.home-seo-article {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  background: transparent;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+.home-seo-article__body {
+  max-width: 720px;
+}
+
+.home-seo-article h2 {
+  margin-top: 56px;
+  margin-bottom: 14px;
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--luxe-text-strong);
+}
+
+.home-seo-article h2:first-child {
+  margin-top: 0;
+}
+
+.home-seo-article h3 {
+  margin-top: 28px;
+  margin-bottom: 8px;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--luxe-accent-mid);
+}
+
+.home-seo-article p {
+  margin: 0 0 1em;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--luxe-text-primary);
+}
+
+.home-seo-article p:last-child {
+  margin-bottom: 0;
+}
+
+.home-seo-article hr {
+  margin: 48px 0;
+  border: none;
+  border-top: 1px solid var(--luxe-border);
+}
+
+.home-seo-article .home-seo-article__who {
+  margin: 0.5em 0 1em;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--luxe-text-secondary);
+}
+
+.home-seo-article ol.home-seo-article__tips {
+  margin: 0 0 1em;
+  padding-left: 1.35em;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--luxe-text-primary);
+}
+
+.home-seo-article ol.home-seo-article__tips li {
+  margin-bottom: 1em;
+}
+
+.home-seo-article ol.home-seo-article__tips li strong {
+  font-weight: 600;
+  color: var(--luxe-text-strong);
+}
+
+.home-seo-article .home-seo-article__steps p {
+  margin-bottom: 0.85em;
+}
+
+.home-seo-article .home-seo-article__steps strong {
+  font-weight: 600;
+  color: var(--luxe-text-strong);
+}
+
+.home-seo-article .home-seo-faq__q {
+  margin: 1.25em 0 0.35em;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--luxe-text-strong);
+}
+
+.home-seo-article .home-seo-faq__q:first-child {
+  margin-top: 0;
+}
+
+.home-seo-article .home-seo-faq__a {
+  margin: 0 0 20px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--luxe-text-secondary);
+}
+
+.home-seo-article .home-seo-article__footnote {
+  margin-top: 40px;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--luxe-text-tertiary);
+}
+
+@media (max-width: 640px) {
+  .home-seo-article {
+    padding: 80px 20px;
+  }
+
+  .home-seo-article h2 {
+    font-size: 22px;
+    margin-top: 48px;
+  }
+
+  .home-seo-article h3 {
+    font-size: 17px;
+  }
+
+  .home-seo-article p,
+  .home-seo-article ol.home-seo-article__tips,
+  .home-seo-article .home-seo-article__who,
+  .home-seo-article .home-seo-article__steps p {
+    font-size: 15px;
+  }
+
+  .home-seo-article .home-seo-faq__q {
+    font-size: 15px;
+  }
+
+  .home-seo-article .home-seo-faq__a {
+    font-size: 14px;
+  }
+}

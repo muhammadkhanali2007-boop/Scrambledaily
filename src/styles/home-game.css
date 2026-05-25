@@ -1,0 +1,182 @@
+/**
+ * Home page word game — layout tweaks only (.wg-home).
+ * Colors inherit from word-game.css + globals.css luxe tokens.
+ */
+
+/* Difficulty segment — matches solver tool pill bar */
+.wg-home .wg-diff-segment {
+  display: inline-flex;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+  padding: 4px;
+  border-radius: var(--luxe-radius-lg);
+  border: 1px solid var(--luxe-border);
+  background: color-mix(in srgb, var(--luxe-surface) 92%, transparent);
+  box-shadow: var(--luxe-shadow-soft);
+}
+
+.wg-home .wg-diff-segment .wg-diff-tab {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.wg-home .wg-diff-segment .wg-diff-tab:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--luxe-surface-muted) 65%, transparent);
+}
+
+/* Title */
+.wg-home .game-title,
+.wg-home .game-title.wg-title {
+  font-family: var(--font-playfair), ui-serif, Georgia, serif;
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--luxe-text-strong);
+}
+
+/* Stats bar */
+.wg-home .stats-bar {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 auto 1.5rem;
+  padding: 0.875rem 2rem;
+  border: 1px solid var(--luxe-border);
+  border-radius: var(--luxe-radius-md);
+  background: var(--luxe-surface-muted);
+  box-shadow: var(--luxe-shadow-inset);
+}
+
+.wg-home .stats-bar--hot .stat--hot .stat-value {
+  color: var(--luxe-accent-mid);
+}
+
+.wg-home .stat-label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--luxe-text-tertiary);
+}
+
+.wg-home .stat-value {
+  display: block;
+  font-family: var(--font-poppins), var(--font-inter), sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--luxe-text-strong);
+}
+
+.wg-home .stat-divider {
+  width: 1px;
+  height: 2.25rem;
+  flex-shrink: 0;
+  background: var(--luxe-border);
+}
+
+/* Word display — responsive tile sizing */
+.wg-home .wg-word-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 1.5rem;
+  padding: 0 0.25rem;
+}
+
+.wg-home .wg-word-display .wg-tiles {
+  justify-content: center;
+}
+
+.wg-home .wg-word-display .wg-tile {
+  --tile-size: min(
+    3.75rem,
+    calc(
+      (100% - (var(--wg-letter-count) - 1) * var(--wg-tile-gap)) /
+        var(--wg-letter-count)
+    )
+  );
+}
+
+.wg-home .wg-word-display .wg-tile-face--front {
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+}
+
+.wg-home .wg-tiles-outer {
+  --wg-tile-gap: clamp(6px, 1.5vw, 10px);
+  --wg-letter-count: 6;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  padding: 6px 2px 10px;
+}
+
+.wg-home .wg-tiles {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--wg-tile-gap);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+}
+
+.wg-home .wg-tile {
+  --tile-size: clamp(
+    2.5rem,
+    calc(
+      (100% - (var(--wg-letter-count) - 1) * var(--wg-tile-gap)) /
+        var(--wg-letter-count)
+    ),
+    3.5rem
+  );
+  width: var(--tile-size);
+  height: min(3.85rem, calc(var(--tile-size) * 1.1));
+  max-width: 100%;
+  flex: 0 1 var(--tile-size);
+  box-sizing: border-box;
+}
+
+.wg-home .wg-tile-inner {
+  width: 100%;
+  height: 100%;
+  transform: none !important;
+  transition: none;
+}
+
+.wg-home .wg-tile-face--back {
+  display: none;
+}
+
+.wg-home .wg-tile-face--front {
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  font-weight: 700;
+}
+
+.wg-home .wg-tile:not(:disabled):hover .wg-tile-face--front {
+  transform: translateY(-2px);
+}
+
+.wg-home .wg-tile:not(:disabled):active .wg-tile-face--front {
+  transform: translateY(0);
+}
+
+.wg-home .wg-tiles--revealed .wg-tile-face--front {
+  border-color: var(--luxe-accent-mid);
+  background: var(--wg-accent-warm-soft);
+}
+
+.wg-home .wg-tiles--revealed .wg-tile:disabled {
+  cursor: default;
+  opacity: 1;
+}

@@ -1,10 +1,12 @@
-import { Footer } from "@/components/Footer";
+﻿import { Footer } from "@/components/Footer";
 import { WordifyClient } from "@/components/WordifyClient";
 
 export default function AnagramSolverPage() {
   return (
     <>
-      <WordifyClient variant="anagram" />
+      <div id="top">
+        <WordifyClient variant="anagram" />
+      </div>
       <Footer />
     </>
   );

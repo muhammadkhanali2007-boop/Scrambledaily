@@ -1,30 +1,184 @@
-/**
- * Mobile-first responsive & touch optimizations (≤639px).
- * Colors, transitions, and game logic are unchanged.
+﻿/**
+ * Mobile and tablet responsive/touch optimizations.
+ * Breakpoints:
+ * - mobile: 0-480px
+ * - tablet: 481-768px
+ * - desktop: 769px+
  */
 
-@media (max-width: 639px) {
-  html {
+/* Shared handheld rules (mobile + tablet) */
+@media (max-width: 768px) {
+  html,
+  body {
     overflow-x: clip;
   }
 
-  body {
+  .luxe-app-shell,
+  .page-transition-root,
+  .wg-root {
+    max-width: 100%;
     overflow-x: clip;
+  }
+
+  .luxe-input,
+  .wg-input,
+  .wg-streak-input,
+  select.luxe-input,
+  #letters-input,
+  #starts,
+  #ends,
+  #contains,
+  #word-length {
+    font-size: 16px !important;
+    min-height: 48px;
+  }
+
+  .luxe-btn-primary,
+  .wg-btn-primary {
+    min-height: 48px;
+    font-size: 14px;
+  }
+
+  .mobile-nav-trigger--luxe,
+  .mobile-nav-close,
+  .mobile-nav-link,
+  .wg-diff-tab,
+  .wg-streak-entry {
+    min-height: 44px;
+  }
+
+  .mobile-nav-trigger--luxe {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+  }
+
+  .site-header-inner {
+    height: 52px;
+    max-height: 52px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .site-header-logo {
+    font-size: 1rem;
+    max-width: 46vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .solver-results-grid {
+    gap: 1.5rem;
+  }
+
+  .solver-sidebar-mobile {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .wg-home-main {
+    min-height: calc(100dvh - 52px);
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .wg-card {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .wg-home .wg-diff-segment {
+    width: 100%;
+    padding: 3px;
+  }
+
+  .wg-home .wg-diff-segment .wg-diff-tab {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+
+  .wg-home .wg-tiles {
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wg-home .wg-tile {
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+  }
+
+  .wg-home .stats-bar {
+    width: 100%;
+    max-width: 100%;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+  .wg-home .wg-momentum-block,
+  .wg-progress-track,
+  .wg-streak-timer-block,
+  .wg-streak-timer-track {
+    width: 100%;
+  }
+
+  .wg-streak-timer-track {
+    height: 0.625rem;
+  }
+
+  .wg-streak-back {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+  }
+
+  .wg-streak-counter {
+    font-size: 1.25rem;
+  }
+
+  .wg-streak-counter-score {
+    font-size: 1.625rem;
+  }
+
+  .wg-hint-box,
+  .wg-tip-block,
+  .wg-tip-body {
+    font-size: 15px;
+    line-height: 1.6;
+    word-break: break-word;
+  }
+
+  [aria-label="Solver tools"] a,
+  [aria-label="Solver tools"] .rounded-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+  }
+
+  .home-seo-article,
+  .streak-seo-article,
+  .unscramble-seo-article {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  details summary {
+    min-height: 44px;
+  }
+}
+
+/* Mobile: 0-480px */
+@media (max-width: 480px) {
+  body {
     font-size: 15px;
     line-height: 1.6;
   }
 
-  .luxe-app-shell {
-    overflow-x: clip;
-    max-width: 100%;
-  }
-
-  .page-transition-root {
-    overflow-x: clip;
-    max-width: 100%;
-  }
-
-  /* --- Global typography --- */
   .luxe-heading-hero {
     font-size: 22px !important;
     line-height: 1.2;
@@ -43,135 +197,17 @@
     line-height: 1.6;
   }
 
-  /* --- Touch targets & inputs (iOS 16px = no zoom) --- */
-  .luxe-input,
-  .wg-input,
-  .wg-streak-input,
-  select.luxe-input,
-  #letters-input,
-  #starts,
-  #ends,
-  #contains,
-  #word-length {
-    font-size: 16px !important;
-    min-height: 48px;
-  }
-
-  .luxe-btn-primary,
-  .wg-btn-primary {
-    width: 100%;
-    min-height: 48px;
-    font-size: 14px;
-  }
-
-  .mobile-nav-trigger--luxe,
-  .mobile-nav-close,
-  .mobile-nav-link {
-    min-height: 44px;
-  }
-
-  .mobile-nav-trigger--luxe {
-    min-width: 44px;
-    width: 44px;
-    height: 44px;
-  }
-
-  /* --- Header --- */
-  .site-header-inner {
-    height: 52px;
-    max-height: 52px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .site-header-logo {
-    font-size: 1rem;
-    max-width: 42vw;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  /* --- Word game shell --- */
-  .wg-root {
-    overflow-x: clip;
-    max-width: 100%;
-  }
-
   .wg-home-main {
-    align-items: flex-start;
-    justify-content: flex-start;
-    min-height: calc(100dvh - 52px);
-    padding-top: 1rem;
-    padding-bottom: 1.5rem;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 1rem 16px 1.5rem;
   }
 
   .wg-card {
-    max-width: 100%;
-    overflow-x: clip;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
-  }
-
-  /* Difficulty tabs */
-  .wg-home .wg-diff-segment {
-    width: 100%;
-    padding: 3px;
-  }
-
-  .wg-home .wg-diff-segment .wg-diff-tab {
-    min-height: 44px;
-    padding: 10px 8px;
-    font-size: 14px;
-  }
-
-  .wg-diff-tab {
-    min-height: 44px;
-    font-size: 14px;
-  }
-
-  /* Letter tiles — wrap, min 40×40px */
-  .wg-home .wg-tiles {
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .wg-home .wg-tile {
-    --tile-size: clamp(
-      2.5rem,
-      calc(
-        (100% - (var(--wg-letter-count) - 1) * var(--wg-tile-gap)) /
-          var(--wg-letter-count)
-      ),
-      3.25rem
-    );
-    min-width: 2.5rem;
-    min-height: 2.5rem;
-    flex: 0 0 var(--tile-size);
-  }
-
-  .wg-home .wg-tile-face--front {
-    font-size: clamp(1.125rem, 4.5vw, 1.5rem);
+    padding: 1.5rem 1rem !important;
   }
 
   .wg-home .game-title,
   .wg-home .game-title.wg-title {
     font-size: 22px;
-  }
-
-  /* Stats bar */
-  .wg-home .stats-bar {
-    width: 100%;
-    max-width: 100%;
-    justify-content: space-around;
-    gap: 1rem;
-    padding: 0.75rem 1rem;
   }
 
   .wg-home .stat-value {
@@ -182,67 +218,12 @@
     font-size: 0.625rem;
   }
 
-  /* Hints & tips */
-  .wg-hint-box,
-  .wg-tip-block {
-    font-size: 15px;
-    line-height: 1.6;
-    word-break: break-word;
-  }
-
-  .wg-tip-body {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  /* Streak challenge */
-  .wg-streak-view {
-    overflow-x: clip;
-    max-width: 100%;
-  }
-
-  .wg-streak-back {
-    min-width: 44px;
-    min-height: 44px;
-    width: 44px;
-    height: 44px;
-  }
-
-  .wg-streak-header {
-    font-size: 1rem;
-  }
-
-  .wg-streak-counter {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-  }
-
-  .wg-streak-counter-score {
-    font-size: 1.625rem;
-  }
-
-  .top-streak-bar {
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    padding: 0 0.25rem;
-  }
-
-  .wg-streak-timer-block {
-    width: 100%;
-  }
-
-  .wg-streak-timer-track {
-    width: 100%;
-    height: 0.625rem;
+  .wg-streak-timer-row--end {
+    justify-content: center;
   }
 
   .wg-streak-timer-value {
     font-size: 1.0625rem;
-  }
-
-  .wg-streak-letter {
-    min-width: 2.5rem;
-    min-height: 2.5rem;
   }
 
   .wg-streak-win-actions {
@@ -252,18 +233,23 @@
 
   .wg-streak-win-actions .wg-btn-primary,
   .wg-streak-btn-secondary {
-    max-width: none;
     width: 100%;
+    max-width: none;
   }
 
   .wg-streak-win-title {
     font-size: 1.375rem;
   }
 
-  /* SEO article */
-  .home-seo-article {
-    padding-left: 16px;
-    padding-right: 16px;
+  .top-streak-bar {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    padding: 0 0.25rem;
+  }
+
+  .home-seo-article,
+  .streak-seo-article,
+  .unscramble-seo-article {
     padding-top: 3rem;
     padding-bottom: 3rem;
     overflow-x: clip;
@@ -290,50 +276,33 @@
     line-height: 1.6;
     word-break: break-word;
   }
+}
 
-  /* Solver pages */
-  .solver-results-grid {
-    gap: 1.5rem;
+/* Tablet: 481-768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .wg-home-main {
+    padding: 1.25rem 20px 2rem;
   }
 
-  .solver-sidebar-mobile {
-    width: 100%;
-    min-width: 0;
+  .wg-card {
+    padding: 1.75rem 1.25rem !important;
   }
 
-  details summary {
-    min-height: 44px;
+  .wg-home .stats-bar {
+    gap: 1.25rem;
+    padding: 0.8rem 1.15rem;
   }
 
-  .wg-streak-entry {
-    min-height: 44px;
-    padding-top: 0.625rem;
-    padding-bottom: 0.625rem;
-  }
-
-  .wg-home .wg-momentum-block {
-    width: 100%;
-  }
-
-  .wg-progress-track {
-    width: 100%;
-  }
-
-  /* Hero tool switcher pills */
-  [aria-label="Solver tools"] a,
-  [aria-label="Solver tools"] .rounded-pill {
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  .home-seo-article,
+  .streak-seo-article,
+  .unscramble-seo-article {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
   }
 }
 
-@media (max-width: 639px) and (prefers-reduced-motion: reduce) {
-  .wg-streak-timer-fill--pulse {
-    animation: none;
-  }
-
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .wg-streak-timer-fill--pulse,
   .wg-streak-counter--pulse {
     animation: none;
   }

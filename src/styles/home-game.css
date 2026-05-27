@@ -180,3 +180,9 @@
   cursor: default;
   opacity: 1;
 }
+
+/* Home center card — match site-wide warm dark brown */
+.wg-root .wg-card {
+  background: #4a3f38;
+}
+

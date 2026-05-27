@@ -26,16 +26,16 @@ export function Header() {
 
   return (
     <header className="luxe-glass-nav sticky top-0 z-50">
-      <div className="site-header-inner mx-auto flex h-[52px] max-w-7xl items-center justify-between gap-2 px-4 sm:h-16 sm:gap-3 sm:px-6 lg:px-8">
+      <div className="site-header-inner mx-auto flex h-[52px] max-w-7xl items-center justify-between gap-2 px-4 md:h-16 md:gap-3 md:px-6 lg:px-8">
         <Link
           href="/"
-          className="site-header-logo font-display text-base font-semibold tracking-tight text-luxe-strong transition-colors duration-luxe ease-luxe hover:text-luxe-accent-mid sm:text-lg"
+          className="site-header-logo font-display text-base font-semibold tracking-tight text-luxe-strong transition-colors duration-luxe ease-luxe hover:text-luxe-accent-mid md:text-lg"
         >
           ScrambleDaily
         </Link>
 
         <nav
-          className="hidden max-w-[100vw] items-center justify-center gap-3 overflow-x-auto px-1 py-1 text-xs font-medium sm:flex sm:gap-5 sm:text-sm"
+          className="hidden max-w-[100vw] items-center justify-center gap-3 overflow-x-auto px-1 py-1 text-xs font-medium md:flex md:gap-5 md:text-sm"
           aria-label="Primary"
         >
           {PRIMARY_SITE_NAV.map((item) => {

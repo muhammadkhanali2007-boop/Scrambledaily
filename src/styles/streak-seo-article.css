@@ -1,0 +1,141 @@
+/**
+ * Streak Challenge SEO article — below the game UI.
+ */
+
+.streak-seo-article {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #c9bfb8;
+}
+
+.streak-seo-article h1 {
+  margin: 0 0 12px;
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.streak-seo-article h2 {
+  margin: 2.25rem 0 1rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #3a3028;
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #e8ddd6;
+}
+
+.streak-seo-article h2:first-of-type {
+  margin-top: 1.75rem;
+}
+
+.streak-seo-article p {
+  margin: 0 0 1em;
+}
+
+.streak-seo-article p:last-child {
+  margin-bottom: 0;
+}
+
+.streak-seo-article ul,
+.streak-seo-article ol {
+  margin: 0 0 1.25em;
+  padding-left: 1.35em;
+}
+
+.streak-seo-article li {
+  margin-bottom: 0.5em;
+}
+
+.streak-seo-article li strong,
+.streak-seo-article p strong {
+  color: #e8ddd6;
+  font-weight: 600;
+}
+
+.streak-seo-article .streak-seo-article__table-wrap {
+  margin: 1.25em 0 1.5em;
+  overflow-x: auto;
+}
+
+.streak-seo-article table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.streak-seo-article th,
+.streak-seo-article td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #3a3028;
+  text-align: left;
+  vertical-align: top;
+}
+
+.streak-seo-article th {
+  background: #2e2520;
+  color: #e8ddd6;
+  font-weight: 600;
+}
+
+.streak-seo-article td {
+  background: #2e2520;
+  color: #c9bfb8;
+}
+
+.streak-seo-article tbody tr:nth-child(even) td {
+  background: color-mix(in srgb, #2e2520 88%, #ffffff 12%);
+}
+
+.streak-seo-article .streak-seo-article__cta {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #e8ddd6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.streak-seo-article .streak-seo-article__cta:hover {
+  color: #fff;
+}
+
+.streak-seo-article .streak-seo-article__footnote {
+  margin-top: 1.5rem;
+  font-size: 0.9375rem;
+  font-style: italic;
+  color: #a89890;
+}
+
+@media (max-width: 640px) {
+  .streak-seo-article {
+    padding: 48px 20px;
+    font-size: 16px;
+  }
+
+  .streak-seo-article h1 {
+    font-size: 1.625rem;
+  }
+
+  .streak-seo-article h2 {
+    font-size: 1.25rem;
+  }
+
+  .streak-seo-article th,
+  .streak-seo-article td {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}

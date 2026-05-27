@@ -1,16 +1,15 @@
 import { Footer } from "@/components/Footer";
-import { InfoContent } from "@/components/InfoContent";
+import { UnscrambleSeoArticle } from "@/components/unscramble/UnscrambleSeoArticle";
 import { WordifyClient } from "@/components/WordifyClient";
+import "@/styles/unscramble-seo-article.css";
 
 export default function UnscramblePage() {
   return (
     <>
-      <WordifyClient variant="unscrambler" />
-      <div className="mx-auto max-w-7xl px-4 pb-6 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
-          <InfoContent />
-        </div>
+      <div id="top">
+        <WordifyClient variant="unscrambler" />
       </div>
+      <UnscrambleSeoArticle />
       <Footer />
     </>
   );

@@ -108,6 +108,12 @@ html {
 }
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   body {
     font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
     color: var(--luxe-text-primary);
@@ -130,6 +136,26 @@ html {
   html.dark body::before {
     opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath fill='none' stroke='%23F4ECE9' stroke-width='0.35' d='M0 60h120M60 0v120M20 20l80 80M100 20L20 100'/%3E%3C/svg%3E");
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 }
 

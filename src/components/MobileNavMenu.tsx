@@ -41,8 +41,8 @@ export function MobileNavMenu({ items, variant = "luxe" }: MobileNavMenuProps) {
 
   const triggerClass =
     variant === "wg"
-      ? "mobile-nav-trigger wg-header-icon-btn sm:hidden"
-      : "mobile-nav-trigger mobile-nav-trigger--luxe sm:hidden";
+      ? "mobile-nav-trigger wg-header-icon-btn md:hidden"
+      : "mobile-nav-trigger mobile-nav-trigger--luxe md:hidden";
 
   return (
     <>
@@ -58,7 +58,7 @@ export function MobileNavMenu({ items, variant = "luxe" }: MobileNavMenuProps) {
       </button>
 
       <div
-        className={`mobile-nav-root sm:hidden ${open ? "mobile-nav-root--open" : ""}`}
+        className={`mobile-nav-root md:hidden ${open ? "mobile-nav-root--open" : ""}`}
         aria-hidden={!open}
       >
         <button

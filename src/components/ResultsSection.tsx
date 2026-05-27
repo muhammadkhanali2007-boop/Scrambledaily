@@ -85,7 +85,7 @@ export function ResultsSection({
                 {group.length} Letter Words
               </h3>
               <ul
-                className="mt-3 flex flex-wrap gap-2"
+                className="mt-3 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap"
                 aria-label={`${group.length} letter words`}
               >
                 {group.words.map((word) => (

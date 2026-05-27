@@ -9,7 +9,7 @@ const footerLinks = [
 export function Footer() {
   return (
     <footer className="mt-20 border-t border-luxe bg-[color:var(--luxe-nav-glass)] backdrop-blur-[20px]">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-10 lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 text-center sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-10 sm:text-left lg:px-8">
         <div>
           <p className="font-display text-lg font-semibold text-luxe-strong">
             ScrambleDaily
@@ -19,7 +19,7 @@ export function Footer() {
           </p>
         </div>
         <nav aria-label="Footer">
-          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-luxe-secondary">
+          <ul className="grid grid-cols-3 gap-x-4 gap-y-2 text-sm font-medium text-luxe-secondary sm:flex sm:flex-wrap sm:gap-x-6">
             {footerLinks.map((item) => (
               <li key={item.label}>
                 <Link

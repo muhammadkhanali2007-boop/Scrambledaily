@@ -11,6 +11,7 @@ import {
 import { buildWrongHintLine } from "@/lib/game-hint-lexicon";
 import { HardModeTipDisplay } from "@/components/word-game/HardModeTipDisplay";
 import { HomeSeoArticle } from "@/components/home/HomeSeoArticle";
+import { StreakSeoArticle } from "@/components/streak/StreakSeoArticle";
 import { ViewTransition } from "@/components/ViewTransition";
 import { StreakChallenge } from "@/components/word-game/StreakChallenge";
 import {
@@ -534,7 +535,10 @@ export function WordGameExperience() {
       : Math.min(streak / PROGRESS_TO_NEXT_LEVEL, 1);
 
   return (
-    <div className="wg-root relative min-h-screen max-w-full overflow-x-clip text-[var(--text-primary)]">
+    <div
+      id="top"
+      className="wg-root relative min-h-screen max-w-full overflow-x-clip text-[var(--text-primary)]"
+    >
       <div className="wg-page-bg" aria-hidden />
 
       <main className="wg-home-main relative z-10 flex min-h-[calc(100dvh-3.25rem)] items-center justify-center px-4 py-8 sm:min-h-[calc(100vh-4rem)] sm:py-12">
@@ -807,7 +811,7 @@ export function WordGameExperience() {
         </div>
       </main>
 
-      <HomeSeoArticle />
+      {viewMode === "streak" ? <StreakSeoArticle /> : <HomeSeoArticle />}
     </div>
   );
 }

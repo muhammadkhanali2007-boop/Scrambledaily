@@ -1,0 +1,108 @@
+/**
+ * Unscramble page SEO article — below the tool UI.
+ */
+
+.unscramble-seo-article {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: #c9bfb8;
+}
+
+.unscramble-seo-article h1 {
+  margin: 0 0 12px;
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.unscramble-seo-article h2 {
+  margin: 2.25rem 0 1rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #3a3028;
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #e8ddd6;
+}
+
+.unscramble-seo-article h2:first-of-type {
+  margin-top: 1.75rem;
+}
+
+.unscramble-seo-article p {
+  margin: 0 0 1em;
+}
+
+.unscramble-seo-article p:last-child {
+  margin-bottom: 0;
+}
+
+.unscramble-seo-article ul {
+  margin: 0 0 1.25em;
+  padding-left: 1.35em;
+  line-height: 1.9;
+  color: #c9bfb8;
+}
+
+.unscramble-seo-article li {
+  margin-bottom: 0.5em;
+}
+
+.unscramble-seo-article li strong,
+.unscramble-seo-article p strong {
+  color: #e8ddd6;
+  font-weight: 600;
+}
+
+.unscramble-seo-article code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.95em;
+  color: #e8ddd6;
+}
+
+.unscramble-seo-article .unscramble-seo-article__cta {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 700;
+  color: #c9a882;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.unscramble-seo-article .unscramble-seo-article__cta:hover {
+  color: #dbc4a0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.unscramble-seo-article .unscramble-seo-article__footnote {
+  margin-top: 1.5rem;
+  font-size: 0.9375rem;
+  font-style: italic;
+  color: #a89890;
+}
+
+@media (max-width: 640px) {
+  .unscramble-seo-article {
+    padding: 48px 20px;
+    font-size: 16px;
+  }
+
+  .unscramble-seo-article h1 {
+    font-size: 1.625rem;
+  }
+
+  .unscramble-seo-article h2 {
+    font-size: 1.25rem;
+  }
+}

@@ -11,4 +11,5 @@ export const PRIMARY_SITE_NAV: SiteNavItem[] = [
   { href: UNSCRAMBLER_PATH, label: "Unscramble" },
   { href: ANAGRAM_SOLVER_PATH, label: "Anagram Solver" },
   { href: "/?streak=1", label: "Streak Challenge" },
+  { href: "/about", label: "About" },
 ];

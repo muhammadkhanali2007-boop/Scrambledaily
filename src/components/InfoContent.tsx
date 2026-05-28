@@ -4,7 +4,7 @@ const sections = [
     title: "What is a word unscrambler?",
     body: [
       "A word unscrambler helps you discover valid words that can be built from a set of letters. It is useful for puzzles, crosswords, and competitive word games where you need to see every option at a glance.",
-      "ScrambleDaily compares your letters against a plain-text English word list in the /data folder on the server—no account required.",
+      "Word Unscramble Game compares your letters against a plain-text English word list in the /data folder on the server—no account required.",
     ],
   },
   {
@@ -32,7 +32,7 @@ export function InfoContent() {
       aria-labelledby="learn-heading"
     >
       <h2 id="learn-heading" className="sr-only">
-        Learn more about ScrambleDaily
+        Learn more about Word Unscramble Game
       </h2>
       <div className="space-y-12">
         {sections.map((block) => (

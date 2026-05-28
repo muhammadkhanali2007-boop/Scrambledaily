@@ -31,7 +31,7 @@ export function Header() {
           href="/"
           className="site-header-logo font-display text-base font-semibold tracking-tight text-luxe-strong transition-colors duration-luxe ease-luxe hover:text-luxe-accent-mid md:text-lg"
         >
-          ScrambleDaily
+          Word Unscramble Game
         </Link>
 
         <nav

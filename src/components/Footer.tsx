@@ -12,10 +12,10 @@ export function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 text-center sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-10 sm:text-left lg:px-8">
         <div>
           <p className="font-display text-lg font-semibold text-luxe-strong">
-            ScrambleDaily
+            Word Unscramble Game
           </p>
           <p className="mt-1 text-sm text-luxe-secondary">
-            © 2025 ScrambleDaily.com
+            © 2025 WordUnscrambleGame.com
           </p>
         </div>
         <nav aria-label="Footer">

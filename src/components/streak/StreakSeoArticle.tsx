@@ -10,7 +10,7 @@ export function StreakSeoArticle() {
       </h1>
       <p>
         If you think you&apos;re good with words, it&apos;s time to prove it. The Streak
-        Challenge on ScrambleDaily is the most addictive daily word game you
+        Challenge on Word Unscramble Game is the most addictive daily word game you
         haven&apos;t tried yet — and once you start, you won&apos;t be able to stop.
       </p>
 
@@ -163,7 +163,7 @@ export function StreakSeoArticle() {
         </a>
       </p>
       <p className="streak-seo-article__footnote">
-        ScrambleDaily — The daily word game for people who think they&apos;re good with
+        Word Unscramble Game — The daily word game for people who think they&apos;re good with
         words. Prove it.
       </p>
     </article>

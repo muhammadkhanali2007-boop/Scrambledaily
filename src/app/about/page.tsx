@@ -3,7 +3,7 @@ export default function AboutPage() {
     <main className="px-6 py-[60px]">
       <article className="mx-auto w-full max-w-[680px]">
         <h1 className="mb-3 font-['Georgia'] text-[2rem] font-semibold leading-tight text-white">
-          About ScrambleDaily
+          About Word Unscramble Game
         </h1>
 
         <p className="mb-6 text-[17px] italic leading-[1.8] text-[#c9bfb8]">
@@ -79,7 +79,7 @@ export default function AboutPage() {
         </p>
 
         <p className="mb-6 text-[17px] leading-[1.8] text-[#c9bfb8]">
-          ScrambleDaily is our attempt to build that place.
+          Word Unscramble Game is our attempt to build that place.
         </p>
 
         <h2 className="mt-10 border-b border-[#3a3028] pb-2 font-['Georgia'] text-[1.3rem] font-semibold text-[#e8ddd6]">

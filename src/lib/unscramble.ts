@@ -1,5 +1,5 @@
 /**
- * ScrambleDaily word finder: match dictionary words against a letter rack.
+ * Word Unscramble Game word finder: match dictionary words against a letter rack.
  * - Multiset / “sorted signature” path when there are no wildcards (fast two-pointer).
  * - Frequency + wildcard path when the rack contains ? tiles.
  *

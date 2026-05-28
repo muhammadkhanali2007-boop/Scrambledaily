@@ -17,7 +17,7 @@ export function WordGameHeader() {
     <header className="wg-header">
       <div className="mx-auto flex h-14 max-w-3xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-5">
         <Link href="/" className="wg-logo text-base sm:text-lg">
-          ScrambleDaily
+          Word Unscramble Game
         </Link>
         <nav
           className="hidden min-w-0 flex-1 justify-center gap-1 md:flex md:gap-2"

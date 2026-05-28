@@ -28,31 +28,31 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    default: "ScrambleDaily - Word Scramble Game",
-    template: "%s | ScrambleDaily",
+    default: "WordUnscrambleGame - Word Scramble Game",
+    template: "%s | WordUnscrambleGame",
   },
   description:
-    "Play the ScrambleDaily word scramble game, or open the unscramble tool to find words from your letters.",
+    "Play the Word Unscramble Game word scramble game, or open the unscramble tool to find words from your letters.",
   keywords: [
     "word unscrambler",
     "anagram solver",
     "jumble solver",
-    "ScrambleDaily",
+    "WordUnscrambleGame",
   ],
-  authors: [{ name: "ScrambleDaily" }],
+  authors: [{ name: "WordUnscrambleGame" }],
   openGraph: {
-    title: "ScrambleDaily - Word Scramble Game",
+    title: "WordUnscrambleGame - Word Scramble Game",
     description:
-      "Play the ScrambleDaily word scramble game, or open the unscramble tool to find words from your letters.",
+      "Play the Word Unscramble Game word scramble game, or open the unscramble tool to find words from your letters.",
     type: "website",
     locale: "en_US",
-    siteName: "ScrambleDaily",
+    siteName: "WordUnscrambleGame",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ScrambleDaily - Word Scramble Game",
+    title: "WordUnscrambleGame - Word Scramble Game",
     description:
-      "Play the ScrambleDaily word scramble game, or open the unscramble tool to find words from your letters.",
+      "Play the Word Unscramble Game word scramble game, or open the unscramble tool to find words from your letters.",
   },
 };
 
@@ -80,7 +80,7 @@ export default function RootLayout({
               <header className="luxe-glass-nav sticky top-0 z-50">
                 <div className="site-header-inner mx-auto flex h-[52px] max-w-7xl items-center px-4 sm:h-16 sm:px-6">
                   <span className="site-header-logo font-display text-base font-semibold text-luxe-strong sm:text-lg">
-                    ScrambleDaily
+                    Word Unscramble Game
                   </span>
                 </div>
               </header>

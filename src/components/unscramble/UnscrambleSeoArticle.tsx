@@ -12,7 +12,7 @@ export function UnscrambleSeoArticle() {
         there. You just can&apos;t see it yet.
       </p>
       <p>
-        That&apos;s exactly what ScrambleDaily&apos;s free Word Unscrambler is built for.
+        That&apos;s exactly what Word Unscramble Game&apos;s free Word Unscrambler is built for.
       </p>
       <p>
         Paste in your letters. Hit unscramble. Every possible word — sorted, listed, ready
@@ -89,10 +89,10 @@ export function UnscrambleSeoArticle() {
         you what&apos;s possible.
       </p>
 
-      <h2>Why ScrambleDaily&apos;s Unscrambler Is Different</h2>
+      <h2>Why Word Unscramble Game&apos;s Unscrambler Is Different</h2>
       <p>
         There are dozens of word unscramblers online. Most of them are slow, cluttered with
-        ads, and bury your results under popups. ScrambleDaily&apos;s tool is built differently:
+        ads, and bury your results under popups. Word Unscramble Game&apos;s tool is built differently:
       </p>
       <ul>
         <li>
@@ -142,7 +142,7 @@ export function UnscrambleSeoArticle() {
         </a>
       </p>
       <p className="unscramble-seo-article__footnote">
-        ScrambleDaily.com — Unscramble any word, find every answer, play smarter.
+        WordUnscrambleGame.com — Unscramble any word, find every answer, play smarter.
       </p>
     </article>
   );

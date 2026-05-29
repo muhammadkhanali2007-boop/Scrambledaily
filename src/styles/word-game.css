@@ -4,7 +4,7 @@
 
 .wg-root {
   --wg-font: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --wg-font-display: var(--font-playfair), ui-serif, Georgia, serif;
+  --wg-font-display: var(--font-playfair), ui-sans-serif, system-ui, sans-serif;
   --wg-radius-sm: var(--luxe-radius-sm);
   --wg-radius-md: var(--luxe-radius-md);
   --wg-radius-lg: var(--luxe-radius-lg);
@@ -21,13 +21,13 @@
   --wg-text-muted: var(--luxe-text-secondary);
   --wg-text-faint: var(--luxe-text-tertiary);
   --wg-accent-green: var(--luxe-success);
-  --wg-accent-green-soft: rgba(109, 138, 114, 0.14);
+  --wg-accent-green-soft: rgba(74, 222, 128, 0.16);
   --wg-accent-blue: var(--luxe-accent-mid);
-  --wg-accent-blue-soft: rgba(156, 107, 88, 0.14);
-  --wg-accent-warm: var(--luxe-accent-soft);
-  --wg-accent-warm-soft: rgba(176, 125, 104, 0.16);
+  --wg-accent-blue-soft: rgba(82, 196, 158, 0.16);
+  --wg-accent-warm: #f4a261;
+  --wg-accent-warm-soft: rgba(244, 162, 97, 0.18);
   --wg-danger: var(--luxe-danger);
-  --wg-danger-soft: rgba(168, 94, 82, 0.14);
+  --wg-danger-soft: rgba(239, 107, 94, 0.16);
   --wg-tile-fg: var(--luxe-text-primary);
   --wg-tile-bg: var(--luxe-card-4);
   --wg-tile-border: var(--luxe-border);
@@ -264,8 +264,8 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   font-family: var(--wg-font);
-  font-weight: 700;
-  font-size: clamp(1rem, 4.5vw, 1.35rem);
+  font-weight: 800;
+  font-size: clamp(1.05rem, 4.5vw, 1.8rem);
   letter-spacing: 0.02em;
   transition:
     box-shadow 0.2s ease,
@@ -283,13 +283,65 @@
 .wg-tile-face--back {
   transform: rotateY(180deg);
   background: var(--wg-success-fill);
-  color: #fff;
+  color: #04302d;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: var(--wg-shadow-sm);
 }
 
 html.dark .wg-tile-face--back {
   border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ============================================================
+   Multicolor letter tiles — distinct background per position.
+   Applies to the scrambled-word tiles (.wg-tile-face--front) and
+   the Streak Challenge tiles (.wg-streak-letter). Colors cycle
+   every 8 letters for longer words.
+   ============================================================ */
+.wg-tiles .wg-tile:nth-child(8n + 1) .wg-tile-face--front,
+.wg-streak-letters .wg-streak-letter:nth-child(8n + 1) {
+  background: #c8b8f0;
+  color: #2d1a6e;
+}
+.wg-tiles .wg-tile:nth-child(8n + 2) .wg-tile-face--front,
+.wg-streak-letters .wg-streak-letter:nth-child(8n + 2) {
+  background: #a8e6cf;
+  color: #0d4a30;
+}
+.wg-tiles .wg-tile:nth-child(8n + 3) .wg-tile-face--front,
+.wg-streak-letters .wg-streak-letter:nth-child(8n + 3) {
+  background: #b8d4f8;
+  color: #0c2d6e;
+}
+.wg-tiles .wg-tile:nth-child(8n + 4) .wg-tile-face--front,
+.wg-streak-letters .wg-streak-letter:nth-child(8n + 4) {
+  background: #fde8b0;
+  color: #6b3d00;
+}
+.wg-tiles .wg-tile:nth-child(8n + 5) .wg-tile-face--front,
+.wg-streak-letters .wg-streak-letter:nth-child(8n + 5) {
+  background: #f9c6d0;
+  color: #6b1a2a;
+}
+.wg-tiles .wg-tile:nth-child(8n + 6) .wg-tile-face--front,
+.wg-streak-letters .wg-streak-letter:nth-child(8n + 6) {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+.wg-tiles .wg-tile:nth-child(8n + 7) .wg-tile-face--front,
+.wg-streak-letters .wg-streak-letter:nth-child(8n + 7) {
+  background: #ffe0b2;
+  color: #6d3a00;
+}
+.wg-tiles .wg-tile:nth-child(8n) .wg-tile-face--front,
+.wg-streak-letters .wg-streak-letter:nth-child(8n) {
+  background: #e1bee7;
+  color: #4a1460;
+}
+
+/* Keep tile borders subtle against the bright pastels */
+.wg-tile-face--front {
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 .wg-tiles--exit .wg-tile {
@@ -558,7 +610,7 @@ html.dark .wg-header {
 }
 
 .wg-diff-tab--active {
-  color: #fff9f7;
+  color: #04302d;
   border-color: transparent;
   background: linear-gradient(
     135deg,
@@ -569,7 +621,7 @@ html.dark .wg-header {
 }
 
 html.dark .wg-diff-tab--active {
-  color: var(--luxe-text-strong);
+  color: #04302d;
   background: linear-gradient(
     135deg,
     var(--luxe-accent-mid) 0%,
@@ -648,9 +700,9 @@ html.dark .wg-diff-tab--active {
     var(--luxe-accent-mid) 50%,
     var(--luxe-accent-soft) 100%
   );
-  color: #fff9f7;
+  color: #04302d;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--font-poppins), var(--wg-font);
   cursor: pointer;
   box-shadow: var(--luxe-shadow-soft);
@@ -661,11 +713,12 @@ html.dark .wg-diff-tab--active {
 }
 
 html.dark .wg-btn-primary {
-  color: #1c1917;
+  color: #04302d;
   background: linear-gradient(
     135deg,
-    #f4ece9 0%,
-    #e8d8d0 100%
+    var(--luxe-accent) 0%,
+    var(--luxe-accent-mid) 50%,
+    var(--luxe-accent-soft) 100%
   );
   border-color: var(--luxe-border);
 }
@@ -774,9 +827,9 @@ html.dark .wg-btn-primary {
 
 .wg-streak-entry:hover:not(:disabled) {
   border-color: var(--luxe-accent-soft);
-  background: rgba(176, 125, 104, 0.22);
+  background: rgba(244, 162, 97, 0.28);
   color: var(--wg-text);
-  box-shadow: 0 2px 10px rgba(70, 40, 30, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 25, 22, 0.12);
 }
 
 .wg-streak-entry:hover:not(:disabled) .wg-streak-entry-arrow {
@@ -981,12 +1034,12 @@ html.dark .wg-btn-primary {
   align-items: center;
   justify-content: center;
   border-radius: var(--wg-radius-md);
-  border: 1px solid var(--wg-border);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   background: color-mix(in srgb, var(--wg-tile-bg) 78%, var(--luxe-card-1) 22%);
   box-shadow: var(--wg-tile-shadow);
   font-family: var(--wg-font);
   font-size: clamp(1.45rem, 5.5vw, 1.9rem);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.08em;
   color: var(--wg-tile-fg);
   animation: wg-streak-letter-enter 250ms ease-out backwards;
@@ -1053,7 +1106,7 @@ html.dark .wg-btn-primary {
 
 html.dark .wg-streak-view .wg-streak-submit {
   background: var(--accent-primary);
-  color: #1c1917;
+  color: #04302d;
 }
 
 .wg-streak-timer-track {

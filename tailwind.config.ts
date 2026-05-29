@@ -11,7 +11,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-playfair)", "ui-serif", "Georgia", "serif"],
+        display: ["var(--font-playfair)", "ui-sans-serif", "system-ui", "sans-serif"],
         poppins: ["var(--font-poppins)", "var(--font-inter)", "sans-serif"],
       },
       fontSize: {

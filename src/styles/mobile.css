@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Mobile and tablet responsive/touch optimizations.
  * Breakpoints:
  * - mobile: 0-480px
@@ -107,8 +107,9 @@
   }
 
   .wg-home .wg-tile {
-    min-width: 2.5rem;
-    min-height: 2.5rem;
+    min-width: 3.05rem;
+    min-height: 3.7rem;
+    height: 3.7rem;
   }
 
   .wg-home .stats-bar {

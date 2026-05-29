@@ -212,7 +212,7 @@ export function WordifyClient({ variant }: WordifyClientProps) {
   const modePill = (active: boolean) =>
     `rounded-pill px-4 py-2 text-sm font-medium transition-all duration-luxe ease-luxe focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--luxe-focus-ring)] ${
       active
-        ? "bg-gradient-to-br from-luxe-accent to-luxe-accent-mid text-[#fff9f7] shadow-luxe-soft dark:from-luxe-accent-mid dark:to-luxe-accent-soft dark:text-luxe-strong"
+        ? "bg-gradient-to-br from-luxe-accent to-luxe-accent-mid text-[#04302d] shadow-luxe-soft dark:from-luxe-accent-mid dark:to-luxe-accent-soft dark:text-[#04302d]"
         : "text-luxe-secondary hover:bg-luxe-muted/80 hover:text-luxe-strong"
     }`;
 

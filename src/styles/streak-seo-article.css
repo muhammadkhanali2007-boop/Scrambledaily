@@ -12,27 +12,27 @@
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   font-size: 17px;
   line-height: 1.75;
-  color: #c9bfb8;
+  color: var(--luxe-text-secondary);
 }
 
 .streak-seo-article h1 {
   margin: 0 0 12px;
-  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  font-family: var(--font-playfair), ui-sans-serif, system-ui, sans-serif;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 800;
   line-height: 1.25;
-  color: #fff;
+  color: var(--luxe-text-strong);
 }
 
 .streak-seo-article h2 {
   margin: 2.25rem 0 1rem;
   padding-bottom: 8px;
-  border-bottom: 1px solid #3a3028;
-  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+  border-bottom: 1px solid var(--luxe-border);
+  font-family: var(--font-playfair), ui-sans-serif, system-ui, sans-serif;
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.35;
-  color: #e8ddd6;
+  color: var(--luxe-text-strong);
 }
 
 .streak-seo-article h2:first-of-type {
@@ -59,8 +59,8 @@
 
 .streak-seo-article li strong,
 .streak-seo-article p strong {
-  color: #e8ddd6;
-  font-weight: 600;
+  color: var(--luxe-text-strong);
+  font-weight: 700;
 }
 
 .streak-seo-article .streak-seo-article__table-wrap {
@@ -78,45 +78,45 @@
 .streak-seo-article th,
 .streak-seo-article td {
   padding: 0.75rem 1rem;
-  border: 1px solid #3a3028;
+  border: 1px solid var(--luxe-border);
   text-align: left;
   vertical-align: top;
 }
 
 .streak-seo-article th {
-  background: #2e2520;
-  color: #e8ddd6;
-  font-weight: 600;
+  background: var(--luxe-surface-muted);
+  color: var(--luxe-text-strong);
+  font-weight: 700;
 }
 
 .streak-seo-article td {
-  background: #2e2520;
-  color: #c9bfb8;
+  background: var(--luxe-surface-muted);
+  color: var(--luxe-text-secondary);
 }
 
 .streak-seo-article tbody tr:nth-child(even) td {
-  background: color-mix(in srgb, #2e2520 88%, #ffffff 12%);
+  background: color-mix(in srgb, var(--luxe-surface-muted) 80%, #ffffff 20%);
 }
 
 .streak-seo-article .streak-seo-article__cta {
   display: inline-block;
   margin-top: 0.5rem;
-  font-weight: 600;
-  color: #e8ddd6;
+  font-weight: 700;
+  color: var(--luxe-accent-mid);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color 0.2s ease;
 }
 
 .streak-seo-article .streak-seo-article__cta:hover {
-  color: #fff;
+  color: var(--luxe-accent);
 }
 
 .streak-seo-article .streak-seo-article__footnote {
   margin-top: 1.5rem;
   font-size: 0.9375rem;
   font-style: italic;
-  color: #a89890;
+  color: var(--luxe-text-tertiary);
 }
 
 @media (max-width: 640px) {

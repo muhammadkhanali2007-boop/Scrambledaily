@@ -8,65 +8,11 @@
    ============================================================ */
 
 :root {
-  /* Page gradient (mocha rose) */
-  --luxe-bg-1: #8b6b61;
-  --luxe-bg-2: #9a7b70;
-  --luxe-bg-3: #a9877c;
-  --luxe-bg-4: #b5968c;
-  --luxe-page-gradient: linear-gradient(
-    135deg,
-    var(--luxe-bg-1) 0%,
-    var(--luxe-bg-2) 35%,
-    var(--luxe-bg-4) 100%
-  );
-
-  /* Floating cards & surfaces */
-  --luxe-card-1: #f4ece9;
-  --luxe-card-2: #f8f3f1;
-  --luxe-card-3: #efe4e0;
-  --luxe-card-4: #fff9f7;
-  --luxe-surface: var(--luxe-card-4);
-  --luxe-surface-muted: var(--luxe-card-2);
-  --luxe-surface-elevated: #ffffff;
-
-  /* Typography */
-  --luxe-text-primary: #4a2a21;
-  --luxe-text-strong: #5b2c1f;
-  --luxe-text-secondary: #7a625a;
-  --luxe-text-tertiary: #8b7268;
-
-  /* Accents */
-  --luxe-accent: #8a5a4a;
-  --luxe-accent-mid: #9c6b58;
-  --luxe-accent-soft: #b07d68;
-  --luxe-success: #6d8a72;
-  --luxe-danger: #a85e52;
-
-  --luxe-border: rgba(90, 50, 35, 0.12);
-  --luxe-border-strong: rgba(90, 50, 35, 0.18);
-  --luxe-shadow: 0 10px 40px rgba(70, 40, 30, 0.12);
-  --luxe-shadow-soft: 0 4px 20px rgba(70, 40, 30, 0.08);
-  --luxe-shadow-inset: inset 0 1px 2px rgba(70, 40, 30, 0.06);
-  --luxe-focus-ring: rgba(176, 125, 104, 0.45);
-
-  --luxe-radius-sm: 12px;
-  --luxe-radius-md: 18px;
-  --luxe-radius-lg: 26px;
-  --luxe-radius-xl: 32px;
-  --luxe-radius-pill: 9999px;
-
-  --luxe-nav-glass: rgba(255, 249, 247, 0.72);
-  --luxe-ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --luxe-duration: 0.35s;
-
-  scroll-padding-top: 5rem;
-}
-
-html.dark {
-  --luxe-bg-1: #4a3f3b;
-  --luxe-bg-2: #554840;
-  --luxe-bg-3: #5f5048;
-  --luxe-bg-4: #6a5a52;
+  /* Page gradient (Cyprus teal) */
+  --luxe-bg-1: #004643;
+  --luxe-bg-2: #00514c;
+  --luxe-bg-3: #00554f;
+  --luxe-bg-4: #005954;
   --luxe-page-gradient: linear-gradient(
     135deg,
     var(--luxe-bg-1) 0%,
@@ -74,33 +20,88 @@ html.dark {
     var(--luxe-bg-4) 100%
   );
 
-  --luxe-card-1: #2c2624;
-  --luxe-card-2: #322b28;
-  --luxe-card-3: #3a322e;
-  --luxe-card-4: #2f2926;
-  --luxe-surface: var(--luxe-card-4);
-  --luxe-surface-muted: var(--luxe-card-2);
-  --luxe-surface-elevated: #38302c;
+  /* Floating cards & surfaces (teal) */
+  --luxe-card-1: #005954;
+  --luxe-card-2: #004f4a;
+  --luxe-card-3: #00605a;
+  --luxe-card-4: #005954;
+  --luxe-surface: #005954;
+  --luxe-surface-muted: #003835;
+  --luxe-surface-elevated: #006159;
 
-  --luxe-text-primary: #f4ece9;
-  --luxe-text-strong: #fff9f7;
-  --luxe-text-secondary: #c9b8b0;
-  --luxe-text-tertiary: #a8948c;
+  /* Typography (sand on teal) */
+  --luxe-text-primary: #f0ede5;
+  --luxe-text-strong: #f0ede5;
+  --luxe-text-secondary: #c8e0db;
+  --luxe-text-tertiary: #8ab5af;
 
-  --luxe-accent: #d4a896;
-  --luxe-accent-mid: #c49a88;
-  --luxe-accent-soft: #b08a7a;
-  --luxe-success: #8fb89a;
-  --luxe-danger: #d4a09a;
+  /* Accents (mint / warm) */
+  --luxe-accent: #52c49e;
+  --luxe-accent-mid: #52c49e;
+  --luxe-accent-soft: #3aa985;
+  --luxe-success: #4ade80;
+  --luxe-danger: #ef6b5e;
 
-  --luxe-border: rgba(255, 235, 225, 0.1);
-  --luxe-border-strong: rgba(255, 235, 225, 0.16);
-  --luxe-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
-  --luxe-shadow-soft: 0 6px 24px rgba(0, 0, 0, 0.25);
-  --luxe-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-  --luxe-focus-ring: rgba(212, 168, 150, 0.4);
+  --luxe-border: rgba(82, 196, 158, 0.2);
+  --luxe-border-strong: rgba(82, 196, 158, 0.35);
+  --luxe-shadow: 0 10px 40px rgba(0, 25, 22, 0.4);
+  --luxe-shadow-soft: 0 4px 20px rgba(0, 25, 22, 0.25);
+  --luxe-shadow-inset: inset 0 1px 2px rgba(0, 25, 22, 0.3);
+  --luxe-focus-ring: rgba(82, 196, 158, 0.45);
 
-  --luxe-nav-glass: rgba(44, 38, 36, 0.75);
+  --luxe-radius-sm: 12px;
+  --luxe-radius-md: 18px;
+  --luxe-radius-lg: 26px;
+  --luxe-radius-xl: 32px;
+  --luxe-radius-pill: 9999px;
+
+  --luxe-nav-glass: rgba(0, 81, 76, 0.78);
+  --luxe-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --luxe-duration: 0.35s;
+
+  scroll-padding-top: 5rem;
+}
+
+/* Single teal palette: dark mode mirrors the default theme. */
+html.dark {
+  --luxe-bg-1: #004643;
+  --luxe-bg-2: #00514c;
+  --luxe-bg-3: #00554f;
+  --luxe-bg-4: #005954;
+  --luxe-page-gradient: linear-gradient(
+    135deg,
+    var(--luxe-bg-1) 0%,
+    var(--luxe-bg-2) 40%,
+    var(--luxe-bg-4) 100%
+  );
+
+  --luxe-card-1: #005954;
+  --luxe-card-2: #004f4a;
+  --luxe-card-3: #00605a;
+  --luxe-card-4: #005954;
+  --luxe-surface: #005954;
+  --luxe-surface-muted: #003835;
+  --luxe-surface-elevated: #006159;
+
+  --luxe-text-primary: #f0ede5;
+  --luxe-text-strong: #f0ede5;
+  --luxe-text-secondary: #c8e0db;
+  --luxe-text-tertiary: #8ab5af;
+
+  --luxe-accent: #52c49e;
+  --luxe-accent-mid: #52c49e;
+  --luxe-accent-soft: #3aa985;
+  --luxe-success: #4ade80;
+  --luxe-danger: #ef6b5e;
+
+  --luxe-border: rgba(82, 196, 158, 0.2);
+  --luxe-border-strong: rgba(82, 196, 158, 0.35);
+  --luxe-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+  --luxe-shadow-soft: 0 6px 24px rgba(0, 0, 0, 0.28);
+  --luxe-shadow-inset: inset 0 1px 2px rgba(0, 25, 22, 0.3);
+  --luxe-focus-ring: rgba(82, 196, 158, 0.45);
+
+  --luxe-nav-glass: rgba(0, 81, 76, 0.78);
 }
 
 html {
@@ -128,8 +129,8 @@ html {
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.055;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath fill='none' stroke='%234A2A21' stroke-width='0.35' d='M0 60h120M60 0v120M20 20l80 80M100 20L20 100'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath fill='none' stroke='%2352C49E' stroke-width='0.35' d='M0 60h120M60 0v120M20 20l80 80M100 20L20 100'/%3E%3C/svg%3E");
     background-size: 120px 120px;
   }
 
@@ -200,16 +201,16 @@ html {
   }
 
   .luxe-heading-hero {
-    font-family: var(--font-playfair), ui-serif, Georgia, serif;
-    font-weight: 600;
+    font-family: var(--font-playfair), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 800;
     letter-spacing: -0.02em;
     line-height: 1.12;
     color: var(--luxe-text-strong);
   }
 
   .luxe-heading-section {
-    font-family: var(--font-playfair), ui-serif, Georgia, serif;
-    font-weight: 600;
+    font-family: var(--font-playfair), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.2;
     color: var(--luxe-text-strong);
@@ -232,9 +233,9 @@ html {
     border-radius: var(--luxe-radius-pill);
     padding: 0.75rem 1.5rem;
     font-family: var(--font-poppins), var(--font-inter), sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.9375rem;
-    color: #fff9f7;
+    color: #04302d;
     background: linear-gradient(
       135deg,
       var(--luxe-accent) 0%,

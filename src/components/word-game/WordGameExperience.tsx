@@ -126,7 +126,7 @@ function fireConfetti() {
     origin: { y: 0.62 },
     ticks: 120,
     gravity: 1.05,
-    colors: ["#3f6f4d", "#5a8f6a", "#4a6fa5", "#b8a88a", "#e8e4df"],
+    colors: ["#52c49e", "#4ade80", "#f0ede5", "#8ab5af", "#facc15"],
   });
 }
 
@@ -137,7 +137,7 @@ function fireGoldenBonusConfetti() {
     origin: { y: 0.58 },
     ticks: 130,
     gravity: 1,
-    colors: ["#b85c38", "#d4a080", "#c9b896", "#e8e4df", "#5a8f6a"],
+    colors: ["#facc15", "#f4a261", "#52c49e", "#f0ede5", "#4ade80"],
     scalar: 1,
   });
 }

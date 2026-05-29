@@ -69,7 +69,7 @@ export function SearchBox({
 function Spinner() {
   return (
     <span
-      className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-[#fff9f7]/35 border-t-[#fff9f7] dark:border-luxe-strong/30 dark:border-t-luxe-strong"
+      className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-[#04302d]/30 border-t-[#04302d] dark:border-[#04302d]/30 dark:border-t-[#04302d]"
       aria-hidden
     />
   );

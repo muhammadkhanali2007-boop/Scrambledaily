@@ -178,6 +178,26 @@
   font-weight: 600;
 }
 
+/* Wrong-answer hint on light card: dark box needs light text (not --text-primary). */
+.wg-home .wg-hint-box,
+.wg-home .wg-hint-box span {
+  color: #e8f0ee;
+}
+
+.wg-home .wg-tip-block,
+.wg-home .wg-tip-title {
+  color: #f0ede5;
+}
+
+.wg-home .wg-tip-body {
+  color: #c8e0db;
+}
+
+.wg-home .wg-tip-label,
+.wg-home .wg-hint-dot {
+  color: #52c49e;
+}
+
 .wg-home .stat-divider {
   width: 1px;
   height: 2.25rem;
@@ -247,70 +267,145 @@
 .wg-home .wg-tile-face--front {
   font-size: clamp(1.65rem, 3.8vw, 2rem);
   font-weight: 800;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  box-shadow:
-    0 8px 18px rgba(19, 30, 28, 0.18),
-    0 2px 4px rgba(19, 30, 28, 0.1);
+  border: none;
+  border-radius: inherit;
+  box-shadow: none;
+  background: transparent !important;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
   opacity: 1;
-  background-clip: padding-box;
 }
 
-/* Home page scrambled letters: same multicolor tile look as Streak. */
-.wg-home .wg-tiles .wg-tile:nth-child(8n + 1) .wg-tile-face--front {
-  background: #c8b8f0 !important;
-  color: #2d1a6e;
+/*
+ * Home multicolor tiles — match Streak Challenge: color the tile button
+ * (sized box), not only the inner face layer.
+ */
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 1) {
+  background-color: #c8b8f0;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 8px 18px rgba(19, 30, 28, 0.18),
+    0 2px 4px rgba(19, 30, 28, 0.1);
 }
 
-.wg-home .wg-tiles .wg-tile:nth-child(8n + 2) .wg-tile-face--front {
-  background: #a8e6cf !important;
-  color: #0d4a30;
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 1) .wg-tile-face--front {
+  color: #2d1a6e !important;
 }
 
-.wg-home .wg-tiles .wg-tile:nth-child(8n + 3) .wg-tile-face--front {
-  background: #b8d4f8 !important;
-  color: #0c2d6e;
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 2) {
+  background-color: #a8e6cf;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 8px 18px rgba(19, 30, 28, 0.18),
+    0 2px 4px rgba(19, 30, 28, 0.1);
 }
 
-.wg-home .wg-tiles .wg-tile:nth-child(8n + 4) .wg-tile-face--front {
-  background: #fde8b0 !important;
-  color: #6b3d00;
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 2) .wg-tile-face--front {
+  color: #0d4a30 !important;
 }
 
-.wg-home .wg-tiles .wg-tile:nth-child(8n + 5) .wg-tile-face--front {
-  background: #f9c6d0 !important;
-  color: #6b1a2a;
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 3) {
+  background-color: #b8d4f8;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 8px 18px rgba(19, 30, 28, 0.18),
+    0 2px 4px rgba(19, 30, 28, 0.1);
 }
 
-.wg-home .wg-tiles .wg-tile:nth-child(8n + 6) .wg-tile-face--front {
-  background: #c8e6c9 !important;
-  color: #1b5e20;
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 3) .wg-tile-face--front {
+  color: #0c2d6e !important;
 }
 
-.wg-home .wg-tiles .wg-tile:nth-child(8n + 7) .wg-tile-face--front {
-  background: #ffe0b2 !important;
-  color: #6d3a00;
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 4) {
+  background-color: #fde8b0;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 8px 18px rgba(19, 30, 28, 0.18),
+    0 2px 4px rgba(19, 30, 28, 0.1);
 }
 
-.wg-home .wg-tiles .wg-tile:nth-child(8n) .wg-tile-face--front {
-  background: #e1bee7 !important;
-  color: #4a1460;
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 4) .wg-tile-face--front {
+  color: #6b3d00 !important;
 }
 
-.wg-home .wg-tile:not(:disabled):hover .wg-tile-face--front {
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 5) {
+  background-color: #f9c6d0;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 8px 18px rgba(19, 30, 28, 0.18),
+    0 2px 4px rgba(19, 30, 28, 0.1);
+}
+
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 5) .wg-tile-face--front {
+  color: #6b1a2a !important;
+}
+
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 6) {
+  background-color: #c8e6c9;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 8px 18px rgba(19, 30, 28, 0.18),
+    0 2px 4px rgba(19, 30, 28, 0.1);
+}
+
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 6) .wg-tile-face--front {
+  color: #1b5e20 !important;
+}
+
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 7) {
+  background-color: #ffe0b2;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 8px 18px rgba(19, 30, 28, 0.18),
+    0 2px 4px rgba(19, 30, 28, 0.1);
+}
+
+.wg-home .wg-tiles > .wg-tile:nth-child(8n + 7) .wg-tile-face--front {
+  color: #6d3a00 !important;
+}
+
+.wg-home .wg-tiles > .wg-tile:nth-child(8n) {
+  background-color: #e1bee7;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 8px 18px rgba(19, 30, 28, 0.18),
+    0 2px 4px rgba(19, 30, 28, 0.1);
+}
+
+.wg-home .wg-tiles > .wg-tile:nth-child(8n) .wg-tile-face--front {
+  color: #4a1460 !important;
+}
+
+.wg-home .wg-tiles > .wg-tile {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Keep multicolor when a tile is selected (ring only, not flat mint overlay). */
+.wg-home .wg-tiles > .wg-tile.wg-tile--selected {
+  box-shadow: 0 0 0 2px var(--luxe-focus-ring);
+}
+
+.wg-home .wg-tiles > .wg-tile.wg-tile--selected .wg-tile-face--front {
+  background: transparent !important;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.wg-home .wg-tile:not(:disabled):hover {
   transform: translateY(-2px);
 }
 
-.wg-home .wg-tile:not(:disabled):active .wg-tile-face--front {
+.wg-home .wg-tile:not(:disabled):active {
   transform: translateY(0);
 }
 
-.wg-home .wg-tiles--revealed .wg-tile-face--front {
-  border-color: var(--luxe-accent-mid);
+.wg-home .wg-tiles--revealed > .wg-tile {
+  box-shadow:
+    0 8px 18px rgba(19, 30, 28, 0.18),
+    0 2px 4px rgba(19, 30, 28, 0.1);
 }
 
 .wg-home .wg-tiles--revealed .wg-tile:disabled {
@@ -409,5 +504,25 @@
   color: #1f2422 !important;
   font-weight: 800;
   letter-spacing: 0.02em;
+}
+
+/* Streak answer input: dark field needs light typed text (not card --wg-text). */
+.wg-root .wg-card .wg-streak-view .wg-streak-input {
+  color: #f9fafb !important;
+  -webkit-text-fill-color: #f9fafb;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  caret-color: #ffffff;
+  background: #003835;
+}
+
+.wg-root .wg-card .wg-streak-view .wg-streak-input::placeholder {
+  color: #8ab5af !important;
+  font-weight: 500;
+}
+
+.wg-root .wg-card .wg-streak-view .wg-streak-input:focus {
+  color: #f9fafb !important;
+  -webkit-text-fill-color: #f9fafb;
 }
 

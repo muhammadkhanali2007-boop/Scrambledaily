@@ -22,6 +22,7 @@ import {
   PROGRESS_TO_NEXT_LEVEL,
 } from "@/lib/word-game";
 import "@/styles/word-game.css";
+import "@/styles/home-game.css";
 
 type StartResponse = {
   gameId: string;
@@ -753,7 +754,7 @@ export function WordGameExperience() {
                   <HardModeTipDisplay tip={hintTip} />
                 ) : (
                   <div
-                    className="wg-hint-box mb-4 flex items-start gap-2 text-left text-sm leading-snug text-[var(--text-primary)]"
+                    className="wg-hint-box mb-4 flex items-start gap-2 text-left text-sm leading-snug"
                     role="status"
                     aria-label="Hint"
                   >

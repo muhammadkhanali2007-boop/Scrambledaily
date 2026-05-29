@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     "WordUnscrambleGame",
   ],
   authors: [{ name: "WordUnscrambleGame" }],
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "WordUnscrambleGame - Word Scramble Game",
     description:

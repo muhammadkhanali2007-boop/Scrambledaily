@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Word Unscramble Game">
+  <rect width="32" height="32" rx="7" fill="#004643"/>
+  <rect x="5" y="5" width="10" height="10" rx="2.5" fill="#c8b8f0"/>
+  <rect x="17" y="5" width="10" height="10" rx="2.5" fill="#a8e6cf"/>
+  <rect x="5" y="17" width="10" height="10" rx="2.5" fill="#fde8b0"/>
+  <rect x="17" y="17" width="10" height="10" rx="2.5" fill="#f9c6d0"/>
+</svg>

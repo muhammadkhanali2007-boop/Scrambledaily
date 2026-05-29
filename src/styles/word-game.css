@@ -451,19 +451,22 @@ html.dark .wg-header {
 .wg-hint-box {
   margin-bottom: 1rem;
   border-radius: var(--wg-radius-md);
-  border: 1px solid var(--wg-border);
+  border: 1px solid rgba(82, 196, 158, 0.28);
   background: var(--wg-surface-2);
   padding: 0.75rem 1rem;
+  color: #e8f0ee;
+  box-shadow: 0 4px 14px rgba(0, 25, 22, 0.2);
   animation: wg-hint-fade 0.28s ease-out;
 }
 
 .wg-tip-block {
   border-radius: var(--luxe-radius-lg);
-  border: 1px solid var(--wg-border);
+  border: 1px solid rgba(82, 196, 158, 0.28);
   background: var(--wg-surface-2);
   padding: 1rem 1.125rem;
+  color: #e8f0ee;
+  box-shadow: 0 4px 14px rgba(0, 25, 22, 0.2);
   animation: wg-hint-fade 0.35s ease-out;
-  box-shadow: var(--wg-shadow-sm);
 }
 
 .wg-tip-label {
@@ -484,14 +487,14 @@ html.dark .wg-header {
   font-weight: 600;
   letter-spacing: 0.01em;
   line-height: 1.35;
-  color: var(--wg-text);
+  color: #f0ede5;
 }
 
 .wg-tip-body {
   margin: 0 0 0.5rem;
   font-size: 0.875rem;
   line-height: 1.55;
-  color: var(--wg-text-muted);
+  color: #c8e0db;
 }
 
 .wg-tip-body:last-child {
@@ -499,7 +502,7 @@ html.dark .wg-header {
 }
 
 .wg-hint-dot {
-  color: var(--wg-accent-blue);
+  color: #52c49e;
   font-size: 0.55rem;
   line-height: 1.6;
 }
@@ -1082,7 +1085,23 @@ html.dark .wg-btn-primary {
   color: var(--wg-danger);
 }
 
+.wg-streak-view .wg-streak-input {
+  color: #f9fafb;
+  font-weight: 600;
+  caret-color: #ffffff;
+  background: var(--wg-surface-2);
+  -webkit-text-fill-color: #f9fafb;
+}
+
+.wg-streak-view .wg-streak-input::placeholder {
+  color: #8ab5af;
+  font-weight: 500;
+  opacity: 1;
+}
+
 .wg-streak-view .wg-streak-input:focus {
+  color: #f9fafb;
+  -webkit-text-fill-color: #f9fafb;
   border-color: var(--accent-primary);
   box-shadow: 0 0 0 2px var(--accent-primary);
 }

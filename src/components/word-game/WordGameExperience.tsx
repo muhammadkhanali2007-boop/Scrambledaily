@@ -675,7 +675,7 @@ export function WordGameExperience() {
           </div>
 
           <h1 className="game-title wg-title mb-6 text-center">
-            Word game
+            Active Word
           </h1>
 
           {loadingGame && !scrambledWord ? (

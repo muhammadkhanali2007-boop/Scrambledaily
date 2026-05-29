@@ -1,20 +1,27 @@
 /**
- * Home page word game — layout tweaks only (.wg-home).
- * Colors inherit from word-game.css + globals.css luxe tokens.
+ * Home page word game — ScrambleDaily-style typography & colors on light card.
  */
 
-/* Difficulty segment — gray track with a solid-black active tab */
+/* Readable text tokens inside the cream game card (overrides page-level light text). */
+.wg-home {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --text-primary: #1a2e2c;
+  --text-muted: #7a8482;
+  color: #1a2e2c;
+}
+
+/* Difficulty segment — beige track, forest-green active pill */
 .wg-home .wg-diff-segment {
   display: inline-flex;
   width: 100%;
   max-width: 100%;
   justify-content: center;
   margin: 0 auto 0.75rem;
-  padding: 4px;
-  border-radius: var(--luxe-radius-lg);
-  border: 1px solid rgba(0, 0, 0, 0.18);
-  background: #4a5568;
-  box-shadow: var(--luxe-shadow-soft);
+  padding: 5px;
+  border-radius: 50px;
+  border: 1px solid #e0d9cc;
+  background: #e8e3d8;
+  box-shadow: none;
 }
 
 .wg-home .wg-diff-segment .wg-diff-tab {
@@ -23,30 +30,59 @@
   border: none;
   box-shadow: none;
   background: transparent;
-  color: rgba(240, 237, 229, 0.72);
+  border-radius: 50px;
+  color: #7a7060;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .wg-home .wg-diff-segment .wg-diff-tab:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.08);
-  color: #f0ede5;
+  background: rgba(255, 255, 255, 0.45);
+  color: #5c564e;
 }
 
 .wg-home .wg-diff-segment .wg-diff-tab--active,
 .wg-home .wg-diff-segment .wg-diff-tab--active:hover:not(:disabled) {
-  background: #1a1a1a;
-  color: #ffffff;
+  background: #004643;
+  color: #f0ede5;
   font-weight: 800;
-  box-shadow: none;
+  box-shadow: 0 2px 8px rgba(0, 50, 47, 0.2);
 }
 
-/* Title */
+/* Headings & meta copy */
 .wg-home .game-title,
 .wg-home .game-title.wg-title {
-  font-family: var(--font-playfair), ui-sans-serif, system-ui, sans-serif;
-  font-size: 1.375rem;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--luxe-text-strong);
+  color: #1a2e2c;
+}
+
+.wg-home .wg-callout-soft {
+  color: #52c49e !important;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.wg-home .wg-game-session-solved {
+  color: #1a2e2c !important;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.35rem, 4vw, 1.65rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.wg-home .wg-game-subtitle {
+  color: #7a8482 !important;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 /* Stats bar */
@@ -57,10 +93,10 @@
   gap: 2rem;
   margin: 0 auto 1.5rem;
   padding: 0.875rem 2rem;
-  border: 1px solid var(--luxe-border);
+  border: 1px solid #d9d1c3;
   border-radius: var(--luxe-radius-md);
-  background: var(--luxe-surface-muted);
-  box-shadow: var(--luxe-shadow-inset);
+  background: #e8e3d8;
+  box-shadow: none;
 }
 
 .wg-home .stats-bar--hot .stat--hot .stat-value {
@@ -69,27 +105,84 @@
 
 .wg-home .stat-label {
   display: block;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   font-size: 0.6875rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--luxe-text-tertiary);
+  color: #7a9490;
 }
 
 .wg-home .stat-value {
   display: block;
-  font-family: var(--font-poppins), var(--font-inter), sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 800;
   font-variant-numeric: tabular-nums;
-  color: var(--luxe-text-strong);
+  color: #1a2e2c;
+}
+
+.wg-home .wg-muted-label {
+  color: #7a9490;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.wg-home .wg-progress-pct {
+  color: #52c49e;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.wg-home .wg-progress-track {
+  background: #d8d2c6;
+}
+
+.wg-home .wg-progress-fill {
+  background: #52c49e;
+}
+
+.wg-home .wg-input {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  color: #1a2e2c;
+  background: #ffffff;
+  border-color: #d5cec0;
+}
+
+.wg-home .wg-input::placeholder {
+  color: #9aa8a5;
+}
+
+.wg-home .wg-btn-primary {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  color: #f0ede5;
+  background: #004643;
+  border-color: #003835;
+  box-shadow: 0 4px 14px rgba(0, 50, 47, 0.22);
+}
+
+.wg-home .wg-btn-primary:hover:not(:disabled) {
+  background: #005954;
+  filter: none;
+}
+
+.wg-home .wg-link {
+  color: #005954;
+  font-weight: 600;
+}
+
+.wg-home .wg-streak-entry {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
 }
 
 .wg-home .stat-divider {
   width: 1px;
   height: 2.25rem;
   flex-shrink: 0;
-  background: var(--luxe-border);
+  background: #d0c8ba;
 }
 
 /* Word display — responsive tile sizing */
@@ -106,15 +199,6 @@
   justify-content: center;
 }
 
-.wg-home .wg-word-display .wg-tile {
-  --tile-size: 3.05rem;
-}
-
-.wg-home .wg-word-display .wg-tile-face--front {
-  font-size: clamp(1.45rem, 5.5vw, 1.9rem);
-  font-weight: 800;
-}
-
 .wg-home .wg-tiles-outer {
   --wg-tile-gap: clamp(6px, 1.5vw, 10px);
   --wg-letter-count: 6;
@@ -129,23 +213,24 @@
 .wg-home .wg-tiles {
   flex-wrap: wrap;
   justify-content: center;
-  gap: var(--wg-tile-gap);
+  gap: clamp(12px, 2vw, 16px);
   width: 100%;
   max-width: 100%;
   min-width: 0;
   margin: 0 auto;
 }
 
-/* Match Streak Challenge tile metrics exactly (.wg-streak-letter) */
+/* Home scrambled letters: solid rounded premium tiles */
 .wg-home .wg-tile {
-  --tile-size: 3.05rem;
-  width: auto;
-  min-width: 3.05rem;
-  height: 3.7rem;
-  min-height: 3.7rem;
+  --tile-size: clamp(4rem, 9vw, 4.95rem);
+  width: var(--tile-size);
+  min-width: var(--tile-size);
+  height: var(--tile-size);
+  min-height: var(--tile-size);
   max-width: none;
   flex: 0 0 auto;
   box-sizing: border-box;
+  padding: 2px;
 }
 
 .wg-home .wg-tile-inner {
@@ -160,48 +245,59 @@
 }
 
 .wg-home .wg-tile-face--front {
-  font-size: clamp(1.45rem, 5.5vw, 1.9rem);
+  font-size: clamp(1.65rem, 3.8vw, 2rem);
   font-weight: 800;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 8px 18px rgba(19, 30, 28, 0.18),
+    0 2px 4px rgba(19, 30, 28, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  opacity: 1;
+  background-clip: padding-box;
 }
 
 /* Home page scrambled letters: same multicolor tile look as Streak. */
 .wg-home .wg-tiles .wg-tile:nth-child(8n + 1) .wg-tile-face--front {
-  background: #c8b8f0;
+  background: #c8b8f0 !important;
   color: #2d1a6e;
 }
 
 .wg-home .wg-tiles .wg-tile:nth-child(8n + 2) .wg-tile-face--front {
-  background: #a8e6cf;
+  background: #a8e6cf !important;
   color: #0d4a30;
 }
 
 .wg-home .wg-tiles .wg-tile:nth-child(8n + 3) .wg-tile-face--front {
-  background: #b8d4f8;
+  background: #b8d4f8 !important;
   color: #0c2d6e;
 }
 
 .wg-home .wg-tiles .wg-tile:nth-child(8n + 4) .wg-tile-face--front {
-  background: #fde8b0;
+  background: #fde8b0 !important;
   color: #6b3d00;
 }
 
 .wg-home .wg-tiles .wg-tile:nth-child(8n + 5) .wg-tile-face--front {
-  background: #f9c6d0;
+  background: #f9c6d0 !important;
   color: #6b1a2a;
 }
 
 .wg-home .wg-tiles .wg-tile:nth-child(8n + 6) .wg-tile-face--front {
-  background: #c8e6c9;
+  background: #c8e6c9 !important;
   color: #1b5e20;
 }
 
 .wg-home .wg-tiles .wg-tile:nth-child(8n + 7) .wg-tile-face--front {
-  background: #ffe0b2;
+  background: #ffe0b2 !important;
   color: #6d3a00;
 }
 
 .wg-home .wg-tiles .wg-tile:nth-child(8n) .wg-tile-face--front {
-  background: #e1bee7;
+  background: #e1bee7 !important;
   color: #4a1460;
 }
 
@@ -215,7 +311,6 @@
 
 .wg-home .wg-tiles--revealed .wg-tile-face--front {
   border-color: var(--luxe-accent-mid);
-  background: var(--wg-accent-warm-soft);
 }
 
 .wg-home .wg-tiles--revealed .wg-tile:disabled {
@@ -223,10 +318,96 @@
   opacity: 1;
 }
 
-/* Home center card — blends into the page (no floating panel look) */
+/* Home center card — light sand card, like reference screenshot */
 .wg-root .wg-card {
-  background: #004643;
-  border-color: transparent;
+  background: #f0ede5;
+  border-color: #dfd9cc;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Streak challenge teaser strip inside home card */
+.wg-home .wg-streak-entry {
+  background: #005954;
+  border-color: #005954;
+  color: #d6e8e4;
   box-shadow: none;
+}
+
+.wg-home .wg-streak-entry-accent,
+.wg-home .wg-streak-entry-arrow {
+  color: #52c49e;
+}
+
+.wg-home .wg-streak-entry:hover:not(:disabled) {
+  background: #004d48;
+  border-color: #004d48;
+  color: #e8f3f1;
+  box-shadow: none;
+}
+
+/*
+ * Streak Challenge inside the light center card (not inside .wg-home).
+ * Override inherited light theme tokens so top text is readable.
+ */
+.wg-root .wg-card .wg-streak-view {
+  --wg-text: #1f2422;
+  --wg-text-muted: #4f6763;
+  --text-primary: #1f2422;
+  --text-muted: #4f6763;
+  color: #1f2422;
+}
+
+.wg-root .wg-card .top-streak-bar,
+.wg-root .wg-card .wg-streak-tagline,
+.wg-root .wg-card .wg-streak-meta,
+.wg-root .wg-card .wg-streak-message,
+.wg-root .wg-card .wg-streak-win-note,
+.wg-root .wg-card .wg-streak-rank-sub {
+  color: #3f4a47 !important;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.wg-root .wg-card .wg-streak-header,
+.wg-root .wg-card .wg-streak-counter,
+.wg-root .wg-card .wg-streak-counter-score,
+.wg-root .wg-card .wg-streak-timer-value,
+.wg-root .wg-card .wg-streak-try-again,
+.wg-root .wg-card .wg-streak-win-title,
+.wg-root .wg-card .wg-streak-win-sub,
+.wg-root .wg-card .wg-streak-rank-title {
+  color: #1f2422 !important;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.wg-root .wg-card .wg-streak-back {
+  color: #1f2422 !important;
+}
+
+.wg-root .wg-card .top-streak-bar {
+  color: #222826 !important;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.wg-root .wg-card .wg-streak-header {
+  color: #202726 !important;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.wg-root .wg-card .wg-streak-tagline {
+  color: #3f4a47 !important;
+  font-weight: 700;
+}
+
+.wg-root .wg-card .wg-streak-counter,
+.wg-root .wg-card .wg-streak-counter-score {
+  color: #1f2422 !important;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 

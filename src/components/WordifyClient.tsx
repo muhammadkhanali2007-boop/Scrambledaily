@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import {
@@ -82,12 +81,6 @@ function pushRecent(letters: string): string[] {
   writeRecent(next);
   return next;
 }
-
-const fadeUp = {
-  initial: { opacity: 0, y: 12 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.45, ease: [0.4, 0, 0.2, 1] as const },
-};
 
 function clearResultsState() {
   return {
@@ -224,7 +217,7 @@ export function WordifyClient({ variant }: WordifyClientProps) {
         aria-labelledby="hero-heading"
       >
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <motion.div {...fadeUp}>
+          <div className="ui-fade-up">
             <h1
               id="hero-heading"
               className="luxe-heading-hero text-hero font-display sm:text-[clamp(2.5rem,5vw,4.25rem)]"
@@ -260,16 +253,11 @@ export function WordifyClient({ variant }: WordifyClientProps) {
                 Anagram Solver
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      <motion.div
-        className="border-b border-luxe pb-10 pt-8 sm:pb-12 sm:pt-10"
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.08, ease: [0.4, 0, 0.2, 1] as const }}
-      >
+      <div className="ui-fade-up ui-fade-up--delay border-b border-luxe pb-10 pt-8 sm:pb-12 sm:pt-10">
         <SearchBox
           letters={letters}
           onLettersChange={(v) => {
@@ -281,7 +269,7 @@ export function WordifyClient({ variant }: WordifyClientProps) {
         />
         <AdvancedFilters values={filters} onChange={setFilters} />
         <ToolTeasers anagramPage={isAnagramPage} />
-      </motion.div>
+      </div>
 
       <div className="mx-auto max-w-7xl px-4 pb-4 pt-8 sm:px-6 lg:px-8">
         <div className="solver-results-grid flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start lg:gap-10">

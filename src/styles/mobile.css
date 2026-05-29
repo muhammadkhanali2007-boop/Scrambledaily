@@ -11,12 +11,14 @@
   html,
   body {
     overflow-x: clip;
+    overscroll-behavior-x: none;
   }
 
   .luxe-app-shell,
   .page-transition-root,
   .wg-root {
     max-width: 100%;
+    min-width: 0;
     overflow-x: clip;
   }
 
@@ -43,8 +45,12 @@
   .mobile-nav-close,
   .mobile-nav-link,
   .wg-diff-tab,
-  .wg-streak-entry {
+  .wg-streak-entry,
+  .wg-tile:not(:disabled),
+  footer nav a {
     min-height: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .mobile-nav-trigger--luxe {
@@ -56,8 +62,8 @@
   .site-header-inner {
     height: 52px;
     max-height: 52px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
   }
 
   .site-header-logo {
@@ -66,6 +72,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  .mobile-nav-drawer {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
   .solver-results-grid {
@@ -77,16 +87,31 @@
     min-width: 0;
   }
 
+  #unscrambler,
+  #anagram {
+    overflow-x: clip;
+  }
+
+  #unscrambler .mx-auto,
+  #anagram .mx-auto {
+    min-width: 0;
+  }
+
   .wg-home-main {
     min-height: calc(100dvh - 52px);
     align-items: flex-start;
     justify-content: flex-start;
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
   }
 
   .wg-card {
     width: 100%;
     max-width: 100%;
     overflow-x: clip;
+  }
+
+  .view-transition-host {
+    min-width: 0;
   }
 
   .wg-home .wg-diff-segment {
@@ -99,6 +124,10 @@
     font-size: 14px;
   }
 
+  .wg-tiles {
+    max-width: 100%;
+  }
+
   .wg-home .wg-tiles {
     width: 100%;
     max-width: 100%;
@@ -107,9 +136,15 @@
   }
 
   .wg-home .wg-tile {
-    min-width: 3.9rem;
-    min-height: 3.9rem;
-    height: 3.9rem;
+    min-width: 3.75rem;
+    min-height: 3.75rem;
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+
+  .wg-tile:not(:disabled) {
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .wg-home .stats-bar {
@@ -137,6 +172,17 @@
     min-height: 44px;
   }
 
+  .wg-streak-letters {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .wg-streak-letter {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
   .wg-streak-counter {
     font-size: 1.25rem;
   }
@@ -159,13 +205,27 @@
     align-items: center;
     justify-content: center;
     min-height: 44px;
+    touch-action: manipulation;
   }
 
   .home-seo-article,
   .streak-seo-article,
   .unscramble-seo-article {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    overflow-x: clip;
+  }
+
+  main.px-6 {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+
+  footer nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.25rem;
   }
 
   details summary {
@@ -219,6 +279,13 @@
     font-size: 0.625rem;
   }
 
+  .wg-home .wg-tile {
+    min-width: 3.5rem;
+    min-height: 3.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
   .wg-streak-timer-row--end {
     justify-content: center;
   }
@@ -253,7 +320,6 @@
   .unscramble-seo-article {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    overflow-x: clip;
   }
 
   .home-seo-article p,
@@ -276,6 +342,34 @@
   .home-seo-faq__a {
     line-height: 1.6;
     word-break: break-word;
+  }
+
+  footer nav ul {
+    gap: 0.35rem 0.5rem;
+  }
+}
+
+/* Narrow phones: 320px */
+@media (max-width: 360px) {
+  .site-header-logo {
+    max-width: 40vw;
+    font-size: 0.9375rem;
+  }
+
+  .wg-home .wg-diff-segment .wg-diff-tab {
+    padding: 10px 6px;
+    font-size: 13px;
+  }
+
+  .wg-home .wg-tile {
+    min-width: 3.25rem;
+    min-height: 3.25rem;
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .luxe-card.rounded-luxe {
+    padding: 1rem !important;
   }
 }
 
@@ -306,5 +400,12 @@
   .wg-streak-timer-fill--pulse,
   .wg-streak-counter--pulse {
     animation: none;
+  }
+
+  .page-transition-root--enter,
+  .view-transition-panel,
+  .ui-fade-up,
+  .ui-fade-up--delay {
+    animation: none !important;
   }
 }

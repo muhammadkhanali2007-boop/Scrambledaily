@@ -78,6 +78,20 @@
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
+  .mobile-nav-list {
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
+  }
+
+  .mobile-nav-link {
+    min-height: 48px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .mobile-nav-link--active {
+    font-weight: 700;
+  }
+
   .solver-results-grid {
     gap: 1.5rem;
   }

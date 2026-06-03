@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { shouldUseMobileLite } from "@/lib/mobile-lite";
 
 type CountUpNumberProps = {
   value: number;
@@ -42,7 +43,7 @@ export function CountUpNumber({
       return;
     }
 
-    if (prefersReducedMotion()) {
+    if (prefersReducedMotion() || shouldUseMobileLite()) {
       setDisplay(to);
       return;
     }

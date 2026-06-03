@@ -1,0 +1,108 @@
+/**
+ * Mobile performance — disables expensive paint/composite work.
+ * Desktop rules unchanged (max-width: 768px only).
+ */
+
+@media (max-width: 768px) {
+  /* Avoid full-viewport backdrop-filter (major GPU cost on mobile) */
+  .luxe-glass-nav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--luxe-nav-glass);
+  }
+
+  .mobile-nav-drawer {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: var(--mobile-nav-drawer-bg);
+    background-image: none;
+  }
+
+  footer.border-t {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  /* Route / view transitions — instant on mobile */
+  .page-transition-root--enter,
+  .view-transition-panel,
+  .ui-fade-up,
+  .ui-fade-up--delay {
+    animation: none !important;
+  }
+
+  /* Ambient layer lite — static background only */
+  .wg-page-bg--lite .wg-page-bg__atmosphere,
+  .wg-page-bg--lite .wg-page-bg__network,
+  .wg-page-bg--lite .wg-page-bg__ghost-words,
+  .wg-page-bg--lite .wg-page-bg__particles {
+    display: none;
+  }
+
+  .wg-page-bg__atmosphere {
+    transition: none;
+  }
+
+  .wg-bg-letter,
+  .wg-bg-particle {
+    animation: none !important;
+  }
+
+  /* Tile enter/exit — instant swap on difficulty change */
+  .wg-tile {
+    animation: none !important;
+    opacity: 1 !important;
+    will-change: auto;
+  }
+
+  .wg-tiles--exit .wg-tile {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Reduce filter animations (expensive on mobile GPU) */
+  .wg-tiles--correct-glow,
+  .wg-card--win-glow {
+    animation: none !important;
+  }
+
+  .wg-tile-face {
+    transition:
+      transform 0.15s ease,
+      opacity 0.15s ease;
+  }
+
+  /* Contain home card paint */
+  .wg-root .wg-card {
+    contain: layout style paint;
+  }
+
+  .wg-page-bg {
+    contain: strict;
+  }
+
+  /* Smoother scrolling */
+  .wg-home-main,
+  .page-transition-root,
+  .luxe-app-shell {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .wg-streak-timer-fill--pulse,
+  .wg-streak-counter--pulse {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .wg-bg-letter,
+  .wg-bg-particle,
+  .wg-tile,
+  .wg-streak-timer-fill--pulse {
+    animation: none !important;
+  }
+}

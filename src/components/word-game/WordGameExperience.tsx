@@ -1,6 +1,6 @@
 "use client";
 
-import confetti from "canvas-confetti";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
@@ -18,11 +18,10 @@ import { buildWrongHintLine } from "@/lib/game-hint-lexicon";
 import { CountUpNumber } from "@/components/ui/CountUpNumber";
 import { HardModeTipDisplay } from "@/components/word-game/HardModeTipDisplay";
 import { HomeAmbientBackground } from "@/components/word-game/HomeAmbientBackground";
-import { HomeSeoArticle } from "@/components/home/HomeSeoArticle";
-import { StreakSeoArticle } from "@/components/streak/StreakSeoArticle";
 import { ViewTransition } from "@/components/ViewTransition";
-import { StreakChallenge } from "@/components/word-game/StreakChallenge";
 import { WinSparkleBurst } from "@/components/word-game/WinSparkleBurst";
+import { useMobileLite } from "@/hooks/use-mobile-lite";
+import { shouldUseMobileLite } from "@/lib/mobile-lite";
 import {
   type GameDifficulty,
   BASE_MAX_WRONG,
@@ -33,6 +32,28 @@ import {
 import "@/styles/word-game.css";
 import "@/styles/home-game.css";
 import "@/styles/home-ambient.css";
+
+const StreakChallenge = dynamic(
+  () =>
+    import("@/components/word-game/StreakChallenge").then((m) => ({
+      default: m.StreakChallenge,
+    })),
+  { loading: () => null },
+);
+
+const HomeSeoArticle = dynamic(
+  () =>
+    import("@/components/home/HomeSeoArticle").then((m) => ({
+      default: m.HomeSeoArticle,
+    })),
+);
+
+const StreakSeoArticle = dynamic(
+  () =>
+    import("@/components/streak/StreakSeoArticle").then((m) => ({
+      default: m.StreakSeoArticle,
+    })),
+);
 
 type StartResponse = {
   gameId: string;
@@ -130,8 +151,9 @@ function difficultyTitle(d: GameDifficulty): string {
   return d === "easy" ? "Easy" : d === "medium" ? "Medium" : "Hard";
 }
 
-/** Lightweight burst — complements CSS sparkles, not a full confetti shower. */
-function fireSubtleConfetti() {
+async function fireSubtleConfetti() {
+  if (shouldUseMobileLite()) return;
+  const { default: confetti } = await import("canvas-confetti");
   confetti({
     particleCount: 16,
     spread: 48,
@@ -143,7 +165,9 @@ function fireSubtleConfetti() {
   });
 }
 
-function fireBonusConfetti() {
+async function fireBonusConfetti() {
+  if (shouldUseMobileLite()) return;
+  const { default: confetti } = await import("canvas-confetti");
   confetti({
     particleCount: 12,
     spread: 42,
@@ -159,6 +183,7 @@ export function WordGameExperience() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const viewMode = homeViewModeFromSearchParams(searchParams);
+  const mobileLite = useMobileLite();
 
   const inputRef = useRef<HTMLInputElement>(null);
   const currentDifficultyRef = useRef<GameDifficulty>("easy");
@@ -239,7 +264,7 @@ export function WordGameExperience() {
 
       if (isFirstRoundRef.current) {
         isFirstRoundRef.current = false;
-      } else {
+      } else if (!shouldUseMobileLite()) {
         setTileExiting(true);
         await sleep(260);
       }
@@ -322,13 +347,14 @@ export function WordGameExperience() {
 
   const selectDifficulty = useCallback(
     (d: GameDifficulty) => {
+      if (loadingGame || currentDifficultyRef.current === d) return;
       setCurrentDifficulty(d);
       currentDifficultyRef.current = d;
       setManualDifficultyOverride(true);
       setStreak(0);
       void startNewGame(d);
     },
-    [startNewGame],
+    [startNewGame, loadingGame],
   );
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -425,9 +451,11 @@ export function WordGameExperience() {
         setSolvedWord(trimmed.toLowerCase());
         setCurrentGuess("");
         setTileIndexStack([]);
-        setSparkleBurstKey((k) => k + 1);
-        fireSubtleConfetti();
-        if (bonus) fireBonusConfetti();
+        if (!shouldUseMobileLite()) {
+          setSparkleBurstKey((k) => k + 1);
+        }
+        void fireSubtleConfetti();
+        if (bonus) void fireBonusConfetti();
         window.setTimeout(() => {
           void startNewGame(nextDifficulty);
         }, 1750);
@@ -560,7 +588,7 @@ export function WordGameExperience() {
   return (
     <div
       id="top"
-      className="wg-root relative min-h-screen max-w-full overflow-x-clip text-[var(--text-primary)]"
+      className={`wg-root relative min-h-screen max-w-full overflow-x-clip text-[var(--text-primary)]${mobileLite ? " wg-root--mobile-lite" : ""}`}
     >
       <HomeAmbientBackground />
 
@@ -733,7 +761,11 @@ export function WordGameExperience() {
                           type="button"
                           disabled={disabledInput}
                           className={`wg-tile wg-word-tile ${tileIndexStack.includes(i) ? "wg-tile--selected" : ""}`}
-                          style={{ animationDelay: `${i * 60}ms` }}
+                          style={
+                            mobileLite
+                              ? undefined
+                              : { animationDelay: `${i * 60}ms` }
+                          }
                           onClick={() => appendFromTile(i)}
                           aria-label={
                             wordRevealed

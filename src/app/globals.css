@@ -194,6 +194,10 @@ html {
     animation: view-transition-fade-in 0.2s var(--luxe-ease) both;
   }
 
+  .view-transition-panel--instant {
+    animation: none;
+  }
+
   .ui-fade-up {
     animation: ui-fade-up 0.45s var(--luxe-ease) both;
   }

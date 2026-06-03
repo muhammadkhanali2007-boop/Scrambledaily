@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import "./globals.css";
 import "@/styles/mobile.css";
+import "@/styles/mobile-performance.css";
 
 // Site-wide typeface: Nunito drives every existing font token
 // (body, display, and label) so the whole UI renders in one family.

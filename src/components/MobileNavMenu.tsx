@@ -23,7 +23,7 @@ export function MobileNavMenu({ items, variant = "luxe" }: MobileNavMenuProps) {
 
   useEffect(() => {
     close();
-  }, [pathname, close]);
+  }, [pathname, searchParams, close]);
 
   useEffect(() => {
     if (!open) return;

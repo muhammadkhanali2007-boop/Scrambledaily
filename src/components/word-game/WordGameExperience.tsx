@@ -2,18 +2,27 @@
 
 import confetti from "canvas-confetti";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   useCallback,
   useEffect,
   useRef,
   useState,
 } from "react";
+import {
+  HOME_PATH,
+  HOME_STREAK_PATH,
+  homeViewModeFromSearchParams,
+} from "@/lib/home-view";
 import { buildWrongHintLine } from "@/lib/game-hint-lexicon";
+import { CountUpNumber } from "@/components/ui/CountUpNumber";
 import { HardModeTipDisplay } from "@/components/word-game/HardModeTipDisplay";
+import { HomeAmbientBackground } from "@/components/word-game/HomeAmbientBackground";
 import { HomeSeoArticle } from "@/components/home/HomeSeoArticle";
 import { StreakSeoArticle } from "@/components/streak/StreakSeoArticle";
 import { ViewTransition } from "@/components/ViewTransition";
 import { StreakChallenge } from "@/components/word-game/StreakChallenge";
+import { WinSparkleBurst } from "@/components/word-game/WinSparkleBurst";
 import {
   type GameDifficulty,
   BASE_MAX_WRONG,
@@ -23,6 +32,7 @@ import {
 } from "@/lib/word-game";
 import "@/styles/word-game.css";
 import "@/styles/home-game.css";
+import "@/styles/home-ambient.css";
 
 type StartResponse = {
   gameId: string;
@@ -120,30 +130,36 @@ function difficultyTitle(d: GameDifficulty): string {
   return d === "easy" ? "Easy" : d === "medium" ? "Medium" : "Hard";
 }
 
-function fireConfetti() {
+/** Lightweight burst — complements CSS sparkles, not a full confetti shower. */
+function fireSubtleConfetti() {
   confetti({
-    particleCount: 72,
-    spread: 58,
-    origin: { y: 0.62 },
-    ticks: 120,
-    gravity: 1.05,
-    colors: ["#52c49e", "#4ade80", "#f0ede5", "#8ab5af", "#facc15"],
+    particleCount: 16,
+    spread: 48,
+    origin: { y: 0.64 },
+    ticks: 65,
+    gravity: 1.08,
+    scalar: 0.82,
+    colors: ["#52c49e", "#4ade80", "#facc15"],
   });
 }
 
-function fireGoldenBonusConfetti() {
+function fireBonusConfetti() {
   confetti({
-    particleCount: 88,
-    spread: 54,
-    origin: { y: 0.58 },
-    ticks: 130,
-    gravity: 1,
-    colors: ["#facc15", "#f4a261", "#52c49e", "#f0ede5", "#4ade80"],
-    scalar: 1,
+    particleCount: 12,
+    spread: 42,
+    origin: { y: 0.6 },
+    ticks: 55,
+    gravity: 1.05,
+    scalar: 0.78,
+    colors: ["#facc15", "#52c49e"],
   });
 }
 
 export function WordGameExperience() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const viewMode = homeViewModeFromSearchParams(searchParams);
+
   const inputRef = useRef<HTMLInputElement>(null);
   const currentDifficultyRef = useRef<GameDifficulty>("easy");
 
@@ -185,7 +201,7 @@ export function WordGameExperience() {
   const [easySolvedSession, setEasySolvedSession] = useState(0);
   const [wordsSolvedSession, setWordsSolvedSession] = useState(0);
   const [tileIndexStack, setTileIndexStack] = useState<number[]>([]);
-  const [viewMode, setViewMode] = useState<"main" | "streak">("main");
+  const [sparkleBurstKey, setSparkleBurstKey] = useState(0);
   const isFirstRoundRef = useRef(true);
   const fromTileRef = useRef(false);
   const totalCorrectWordsRef = useRef(0);
@@ -294,10 +310,15 @@ export function WordGameExperience() {
     return () => window.clearTimeout(t);
   }, [streakBump]);
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("streak") === "1") setViewMode("streak");
-  }, []);
+  const openStreakView = useCallback(() => {
+    if (viewMode === "streak") return;
+    router.replace(HOME_STREAK_PATH, { scroll: false });
+  }, [router, viewMode]);
+
+  const openMainView = useCallback(() => {
+    if (viewMode === "main") return;
+    router.replace(HOME_PATH, { scroll: false });
+  }, [router, viewMode]);
 
   const selectDifficulty = useCallback(
     (d: GameDifficulty) => {
@@ -404,8 +425,9 @@ export function WordGameExperience() {
         setSolvedWord(trimmed.toLowerCase());
         setCurrentGuess("");
         setTileIndexStack([]);
-        fireConfetti();
-        if (bonus) fireGoldenBonusConfetti();
+        setSparkleBurstKey((k) => k + 1);
+        fireSubtleConfetti();
+        if (bonus) fireBonusConfetti();
         window.setTimeout(() => {
           void startNewGame(nextDifficulty);
         }, 1750);
@@ -540,15 +562,16 @@ export function WordGameExperience() {
       id="top"
       className="wg-root relative min-h-screen max-w-full overflow-x-clip text-[var(--text-primary)]"
     >
-      <div className="wg-page-bg" aria-hidden />
+      <HomeAmbientBackground />
 
       <main className="wg-home-main relative z-10 flex min-h-[calc(100dvh-3.25rem)] items-center justify-center px-4 py-8 sm:min-h-[calc(100vh-4rem)] sm:py-12">
         <div
           className={`wg-card relative w-full max-w-md overflow-x-clip px-5 py-8 sm:overflow-visible sm:px-8 sm:py-9 ${viewMode === "main" && cardWinGlow ? "wg-card--win-glow" : ""}`}
         >
+          <WinSparkleBurst burstKey={sparkleBurstKey} />
           <ViewTransition viewKey={viewMode} className="w-full">
           {viewMode === "streak" ? (
-            <StreakChallenge onBack={() => setViewMode("main")} />
+            <StreakChallenge onBack={openMainView} />
           ) : (
             <>
           {celebration ? (
@@ -589,7 +612,7 @@ export function WordGameExperience() {
             type="button"
             disabled={loadingGame}
             className="wg-streak-entry"
-            onClick={() => setViewMode("streak")}
+            onClick={openStreakView}
             aria-label="Open Streak Challenge"
           >
             <span className="wg-streak-entry-text">
@@ -613,7 +636,8 @@ export function WordGameExperience() {
           ) : null}
 
           <p className="wg-game-session-solved mb-2 text-center text-[var(--text-muted)]">
-            {wordsSolvedSession} solved this session
+            <CountUpNumber value={wordsSolvedSession} className="tabular-nums" />{" "}
+            solved this session
           </p>
 
           <p className="wg-game-subtitle mb-5 text-center text-[var(--text-muted)]">
@@ -634,11 +658,10 @@ export function WordGameExperience() {
           >
             <div className="stat">
               <span className="stat-label">SCORE</span>
-              <span
+              <CountUpNumber
+                value={score}
                 className={`stat-value tabular-nums ${scoreBump ? "wg-badge--pulse" : ""}`}
-              >
-                {score}
-              </span>
+              />
             </div>
             <div className="stat-divider" aria-hidden />
             <div className={`stat ${streak >= 3 ? "stat--hot" : ""}`}>
@@ -646,7 +669,8 @@ export function WordGameExperience() {
               <span
                 className={`stat-value tabular-nums ${streakBump ? "wg-badge--pulse" : ""}`}
               >
-                🔥 {streak}
+                🔥{" "}
+                <CountUpNumber value={streak} className="tabular-nums" />
               </span>
             </div>
           </div>

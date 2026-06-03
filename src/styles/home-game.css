@@ -54,9 +54,10 @@
 .wg-home .game-title,
 .wg-home .game-title.wg-title {
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.5625rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
   color: #1a2e2c;
 }
 
@@ -116,9 +117,11 @@
 .wg-home .stat-value {
   display: block;
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
   color: #1a2e2c;
 }
 
@@ -413,19 +416,13 @@
   opacity: 1;
 }
 
-/* Home center card — light sand card, like reference screenshot */
-.wg-root .wg-card {
-  background: #f0ede5;
-  border-color: #dfd9cc;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
+/* Hero card surface — depth & gradient in home-ambient.css */
 
 /* Streak challenge teaser strip inside home card */
 .wg-home .wg-streak-entry {
   background: #005954;
   border-color: #005954;
   color: #d6e8e4;
-  box-shadow: none;
 }
 
 .wg-home .wg-streak-entry-accent,
@@ -437,7 +434,6 @@
   background: #004d48;
   border-color: #004d48;
   color: #e8f3f1;
-  box-shadow: none;
 }
 
 /*

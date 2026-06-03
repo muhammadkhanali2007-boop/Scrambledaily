@@ -233,6 +233,11 @@ html {
     .ui-fade-up--delay {
       animation: none !important;
     }
+
+    .luxe-glass-nav nav a:hover,
+    .mobile-nav-link:active {
+      transform: none;
+    }
   }
 
   .luxe-glass-nav {
@@ -242,6 +247,28 @@ html {
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35) inset,
       0 8px 32px rgba(70, 40, 30, 0.06);
+  }
+
+  .luxe-glass-nav nav a {
+    display: inline-block;
+    transition:
+      color var(--luxe-duration) var(--luxe-ease),
+      transform 0.2s var(--luxe-ease);
+  }
+
+  .luxe-glass-nav nav a:hover {
+    transform: scale(1.02);
+  }
+
+  .mobile-nav-link {
+    transition:
+      background var(--luxe-duration) var(--luxe-ease),
+      color var(--luxe-duration) var(--luxe-ease),
+      transform 0.2s var(--luxe-ease);
+  }
+
+  .mobile-nav-link:active {
+    transform: scale(1.02);
   }
 
   html.dark .luxe-glass-nav {

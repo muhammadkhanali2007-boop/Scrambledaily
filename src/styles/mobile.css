@@ -409,3 +409,10 @@
     animation: none !important;
   }
 }
+
+/* Mobile: no parallax layer shift (pointer + JS already gated; static letters only) */
+@media (max-width: 768px) {
+  .wg-page-bg__atmosphere {
+    transition: none;
+  }
+}

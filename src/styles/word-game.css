@@ -47,13 +47,7 @@
   --accent-primary: var(--luxe-accent);
 }
 
-.wg-page-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: var(--luxe-page-gradient);
-}
+/* Homepage background layers: see home-ambient.css */
 
 @keyframes wg-tile-in {
   from {

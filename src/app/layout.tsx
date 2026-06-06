@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Nunito } from "next/font/google";
 import { Suspense } from "react";
+import Script from "next/script";
 import { Header } from "@/components/Header";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import "./globals.css";
@@ -84,6 +85,18 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${nunitoBody.variable} ${nunitoDisplay.variable} ${nunitoLabel.variable} luxe-app-shell font-sans antialiased`}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17923553832"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17923553832');
+          `}
+        </Script>
         <ThemeProvider>
           <Suspense
             fallback={

@@ -89,10 +89,11 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=AW-17923553832"
           strategy="afterInteractive"
         />
-        <Script id="google-ads" strategy="afterInteractive">
+        <Script id="google-ads-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
             gtag('js', new Date());
             gtag('config', 'AW-17923553832');
           `}

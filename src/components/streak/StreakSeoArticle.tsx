@@ -4,10 +4,13 @@ export function StreakSeoArticle() {
       className="streak-seo-article"
       aria-labelledby="streak-seo-article-title"
     >
-      <h1 id="streak-seo-article-title">
+      <h2
+        id="streak-seo-article-title"
+        className="font-display text-[1.625rem] md:text-[2rem] font-extrabold text-luxe-strong leading-[1.25] mb-3"
+      >
         Can You Keep Your Streak Alive? The Daily Word Scramble Challenge That&apos;s
         Taking Over
-      </h1>
+      </h2>
       <p>
         If you think you&apos;re good with words, it&apos;s time to prove it. The Streak
         Challenge on Word Unscramble Game is the most addictive daily word game you

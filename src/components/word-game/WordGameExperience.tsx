@@ -41,19 +41,7 @@ const StreakChallenge = dynamic(
   { loading: () => null },
 );
 
-const HomeSeoArticle = dynamic(
-  () =>
-    import("@/components/home/HomeSeoArticle").then((m) => ({
-      default: m.HomeSeoArticle,
-    })),
-);
 
-const StreakSeoArticle = dynamic(
-  () =>
-    import("@/components/streak/StreakSeoArticle").then((m) => ({
-      default: m.StreakSeoArticle,
-    })),
-);
 
 type StartResponse = {
   gameId: string;
@@ -727,9 +715,9 @@ export function WordGameExperience() {
             </div>
           </div>
 
-          <h1 className="game-title wg-title mb-6 text-center">
+          <h2 className="game-title wg-title mb-6 text-center">
             Active Word
-          </h1>
+          </h2>
 
           {loadingGame && !scrambledWord ? (
             <p className="py-12 text-center text-sm text-[var(--text-muted)]">
@@ -868,7 +856,6 @@ export function WordGameExperience() {
         </div>
       </main>
 
-      {viewMode === "streak" ? <StreakSeoArticle /> : <HomeSeoArticle />}
     </div>
   );
 }

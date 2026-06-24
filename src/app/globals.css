@@ -577,3 +577,13 @@ html {
     }
   }
 }
+
+/* Anagram Solver SEO Article Typography Fix */
+.anagram-article-section p,
+.anagram-article-section ul,
+.anagram-article-section ol,
+.anagram-article-section li,
+.anagram-article-section strong {
+  color: #FFFFFF !important;
+}
+

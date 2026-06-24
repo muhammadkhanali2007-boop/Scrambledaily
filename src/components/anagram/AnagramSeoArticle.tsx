@@ -1,6 +1,6 @@
 export function AnagramSeoArticle() {
   return (
-    <section className="anagram-article-section mx-auto mt-10 max-w-3xl border-t border-luxe px-4 pt-8 text-base leading-relaxed text-gray-700 md:px-8">
+    <section className="anagram-article-section mx-auto mt-10 max-w-3xl border-t border-luxe px-4 pt-8 text-base leading-relaxed md:px-8">
       <h2 className="mb-4 break-words text-xl font-semibold text-luxe-strong md:text-2xl">
         Anagram Solver - Find Every Word Hidden in Your Letters
       </h2>

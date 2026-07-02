@@ -33,34 +33,19 @@ const nunitoLabel = Nunito({
 
 export const metadata: Metadata = {
   title: {
-    default: "WordUnscrambleGame - Word Scramble Game",
+    default: "Word Unscramble Game — Free Online Word Puzzle",
     template: "%s | WordUnscrambleGame",
   },
   description:
-    "Play the Word Unscramble Game word scramble game, or open the unscramble tool to find words from your letters.",
-  keywords: [
-    "word unscrambler",
-    "anagram solver",
-    "jumble solver",
-    "WordUnscrambleGame",
-  ],
+    "Play Word Unscramble Game — free online word puzzles, an unscramble tool, anagram solver and daily streak challenge.",
   authors: [{ name: "WordUnscrambleGame" }],
   icons: {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "WordUnscrambleGame - Word Scramble Game",
-    description:
-      "Play the Word Unscramble Game word scramble game, or open the unscramble tool to find words from your letters.",
-    type: "website",
     locale: "en_US",
     siteName: "WordUnscrambleGame",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "WordUnscrambleGame - Word Scramble Game",
-    description:
-      "Play the Word Unscramble Game word scramble game, or open the unscramble tool to find words from your letters.",
+    type: "website",
   },
 };
 

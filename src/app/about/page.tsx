@@ -1,3 +1,32 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Word Unscramble Game — Our Story & Mission",
+  description:
+    "Learn about Word Unscramble Game — built by a small team who believe everyone has more word potential than they think. Clean, fast, ad-light tools designed to help you learn while you play.",
+  keywords: [
+    "about word unscramble game",
+    "word game team",
+    "word unscramble mission",
+  ],
+  alternates: {
+    canonical: "https://wordunscramblegame.com/about",
+  },
+  openGraph: {
+    title: "About Us — Word Unscramble Game",
+    description:
+      "We built Word Unscramble Game because words deserve better. Clean tools, smart hints, real learning.",
+    url: "https://wordunscramblegame.com/about",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us — Word Unscramble Game",
+    description:
+      "We built Word Unscramble Game because words deserve better. Clean tools, smart hints, real learning.",
+  },
+};
+
 export default function AboutPage() {
   return (
     <main className="px-6 py-[60px]">

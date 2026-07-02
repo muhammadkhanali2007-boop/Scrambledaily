@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function HomeSeoArticle() {
   return (
     <article className="home-seo-article" aria-labelledby="home-seo-article-title">
@@ -95,13 +97,13 @@ export function HomeSeoArticle() {
           vocabulary instincts.
         </p>
         <p className="home-seo-article__who">
-          Who it&apos;s for: word nerds, Scrabble players, crossword fans, or anyone who genuinely
+          Who it&apos;s for: word nerds, <Link href="/unscramble" title="Free Word Unscrambler Tool" className="internal-link">Scrabble players</Link>, crossword fans, or anyone who genuinely
           wants to push their limits.
         </p>
 
         <hr />
 
-        <h2>Tips to Unscramble Words Faster (That Actually Work)</h2>
+        <h2>Tips to <Link href="/unscramble" title="Free Word Unscrambler Tool" className="internal-link">Unscramble Words</Link> Faster (That Actually Work)</h2>
         <p>
           Most people stare at scrambled letters and wait for inspiration to hit. That&apos;s the
           slow way. Here are five strategies that will make you noticeably faster within just a few
@@ -160,7 +162,7 @@ export function HomeSeoArticle() {
 
         <hr />
 
-        <h2>The Streak Challenge — Can You Hold the Top Spot?</h2>
+        <h2>The <Link href="/streak-challenge" title="Daily Streak Challenge Game" className="internal-link">Streak Challenge</Link> — Can You Hold the Top Spot?</h2>
         <p>Every day, the Streak Challenge resets and the competition is wide open.</p>
         <p>
           Here&apos;s how it works: you play words back to back without getting one wrong. Every
@@ -264,7 +266,7 @@ export function HomeSeoArticle() {
         </p>
         <p>
           Start with Easy if you&apos;re finding your feet. Go straight to Hard if you want to be
-          humbled. Jump into the Streak Challenge if you want to compete and see your name at the top
+          humbled. Jump into the <Link href="/streak-challenge" title="Daily Streak Challenge Game" className="internal-link">Streak Challenge</Link> if you want to compete and see your name at the top
           of the board.
         </p>
         <p>The letters are scrambled. Your move.</p>

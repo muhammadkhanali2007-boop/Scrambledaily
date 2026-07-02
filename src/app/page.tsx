@@ -9,14 +9,30 @@ import "@/styles/home-seo-article.css";
 import "@/styles/streak-seo-article.css";
 
 export const metadata: Metadata = {
-  title: "Word Unscramble Game — Play Free Online",
+  title: "Word Unscramble Game — Play Free Online (Easy, Medium & Hard)",
   description:
-    "Play the Word Unscramble Game free online. Unscramble letters, solve anagrams, and build your word streak with easy, medium, and hard levels.",
+    "Play the free Word Unscramble Game online. Solve scrambled words across Easy, Medium and Hard levels. Build your streak, earn XP and learn new words every day. No signup needed.",
+  keywords: [
+    "word unscramble game",
+    "word scramble game online free",
+    "unscramble words game",
+    "daily word game",
+  ],
+  alternates: {
+    canonical: "https://wordunscramblegame.com",
+  },
   openGraph: {
     title: "Word Unscramble Game — Play Free Online",
     description:
-      "Play the Word Unscramble Game free online. Unscramble letters, solve anagrams, and build your word streak with easy, medium, and hard levels.",
+      "Solve scrambled words, build streaks and level up your vocabulary. Free daily word game — no signup needed.",
+    url: "https://wordunscramblegame.com",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Word Unscramble Game — Play Free Online",
+    description:
+      "Solve scrambled words, build streaks and level up your vocabulary. Free daily word game — no signup needed.",
   },
 };
 

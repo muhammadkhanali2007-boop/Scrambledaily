@@ -587,3 +587,18 @@ html {
   color: #FFFFFF !important;
 }
 
+/* ============================================================
+   Internal links — natural contextual links across SEO articles
+   ============================================================ */
+.internal-link {
+  color: var(--luxe-accent-mid);
+  text-decoration: none;
+  font-weight: inherit;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.internal-link:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--luxe-accent-mid);
+  text-underline-offset: 3px;
+}

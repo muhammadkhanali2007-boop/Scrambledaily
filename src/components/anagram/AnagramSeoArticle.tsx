@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function AnagramSeoArticle() {
   return (
     <section className="anagram-article-section mx-auto mt-10 max-w-3xl border-t border-luxe px-4 pt-8 text-base leading-relaxed md:px-8">
@@ -214,7 +216,7 @@ export function AnagramSeoArticle() {
         Which Games Work Best With an Anagram Solver?
       </h2>
       <p className="mb-4">
-        Any game that involves rearranging or unscrambling letters benefits from
+        Any game that involves rearranging or <Link href="/unscramble" title="Free Word Unscrambler Tool" className="internal-link">unscrambling letters</Link> benefits from
         anagram thinking. Here&apos;s a quick rundown of the most popular ones:
       </p>
       <ul className="mb-8 list-inside list-disc">
@@ -235,7 +237,7 @@ export function AnagramSeoArticle() {
           and the goal of finding every possible word.
         </li>
         <li className="mb-2">
-          <strong>Jumble</strong> - A newspaper puzzle where scrambled words need
+          <strong><Link href="/unscramble" title="Free Word Unscrambler Tool" className="internal-link">Jumble</Link></strong> - A newspaper puzzle where scrambled words need
           to be unscrambled.
         </li>
         <li>
@@ -273,7 +275,7 @@ export function AnagramSeoArticle() {
         <strong>
           What&apos;s the difference between an anagram and a word scramble?
         </strong>{" "}
-        A word scramble usually points to one original word, while an anagram can
+        A <Link href="/streak-challenge" title="Daily Streak Challenge Game" className="internal-link">word scramble</Link> usually points to one original word, while an anagram can
         produce any valid word made from the given letters.
       </p>
 
@@ -281,7 +283,7 @@ export function AnagramSeoArticle() {
         Start Solving
       </h2>
       <p className="mb-4">
-        There&apos;s a reason word games have stayed popular for generations.
+        There&apos;s a reason <Link href="/" title="Word Unscramble Game — Play Free Online" className="internal-link">word games</Link> have stayed popular for generations.
         They&apos;re genuinely good for your brain - they build vocabulary, improve
         pattern recognition, and keep your mind sharp.
       </p>

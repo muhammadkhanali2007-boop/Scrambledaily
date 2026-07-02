@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function UnscrambleSeoArticle() {
   return (
     <article
@@ -34,7 +36,7 @@ export function UnscrambleSeoArticle() {
       <h2>When Do People Actually Use This?</h2>
       <p>More often than you&apos;d think. Here&apos;s the honest list:</p>
       <p>
-        <strong>Scrabble and Words With Friends</strong> — You&apos;ve got seven tiles that
+        <strong><Link href="/anagram-solver" title="Free Anagram Solver" className="internal-link">Scrabble and Words With Friends</Link></strong> — You&apos;ve got seven tiles that
         spell nothing. The unscrambler finds the highest-scoring play you didn&apos;t see. No
         shame in it — every serious player uses one.
       </p>
@@ -82,7 +84,7 @@ export function UnscrambleSeoArticle() {
       <p>
         In a casual game with friends? Probably best to keep it in your pocket. In a solo
         puzzle where you&apos;re stuck and just want to move on? Absolutely use it. Learning new
-        words from the results? That&apos;s just vocabulary building in disguise.
+        words from the results? That&apos;s just <Link href="/" title="Word Unscramble Game — Play Free Online" className="internal-link">vocabulary building</Link> in disguise.
       </p>
       <p>
         The real answer: tools don&apos;t cheat. People set their own rules. This one just shows
@@ -133,7 +135,7 @@ export function UnscrambleSeoArticle() {
       <p>
         Word games are supposed to be fun. Getting completely stuck for ten minutes is not
         fun. That&apos;s what this tool is for — not to play the game for you, but to get you
-        moving again so you can keep enjoying it.
+        moving again so you can keep enjoying it. Want a timed challenge? Try the <Link href="/streak-challenge" title="Daily Streak Challenge Game" className="internal-link">Streak Challenge</Link>.
       </p>
       <p>Paste your letters. See your options. Make your move.</p>
       <p>

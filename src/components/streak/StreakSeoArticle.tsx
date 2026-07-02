@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function StreakSeoArticle() {
   return (
     <article
@@ -13,7 +15,7 @@ export function StreakSeoArticle() {
       </h2>
       <p>
         If you think you&apos;re good with words, it&apos;s time to prove it. The Streak
-        Challenge on Word Unscramble Game is the most addictive daily word game you
+        Challenge on Word Unscramble Game is the most addictive daily <Link href="/" title="Word Unscramble Game — Play Free Online" className="internal-link">word game</Link> you
         haven&apos;t tried yet — and once you start, you won&apos;t be able to stop.
       </p>
 
@@ -61,7 +63,7 @@ export function StreakSeoArticle() {
       </p>
 
       <h2>Tips to Build a Longer Streak</h2>
-      <p>Want to actually win the leaderboard? Here&apos;s how the best players unscramble words faster:</p>
+      <p>Want to actually win the leaderboard? Here&apos;s how the best players <Link href="/unscramble" title="Free Word Unscrambler Tool" className="internal-link">unscramble words</Link> faster:</p>
       <p>
         <strong>1. Look for Common Word Endings First</strong> — English words love
         endings like -ING, -ED, -ER, -TION, -LY. Scan the scrambled letters for these
@@ -107,7 +109,7 @@ export function StreakSeoArticle() {
       <h2>Who Plays the Streak Challenge?</h2>
       <p>
         The Streak Challenge isn&apos;t just for English majors. Players range from
-        students building vocabulary for SAT/GRE/LSAT prep, crossword and Scrabble
+        students building vocabulary for SAT/GRE/LSAT prep, crossword and <Link href="/anagram-solver" title="Free Anagram Solver" className="internal-link">Scrabble</Link>
         enthusiasts looking for a faster daily fix, Wordle fans who want more intensity
         than one puzzle a day, competitive types who need something with a real
         leaderboard, and remote workers who need a 2-minute brain reset between
@@ -156,7 +158,7 @@ export function StreakSeoArticle() {
 
       <h2>Can You Beat Today&apos;s Top Streaker?</h2>
       <p>
-        There&apos;s only one way to find out. The Streak Challenge is free to play,
+        There&apos;s only one way to find out. The Streak Challenge is <Link href="/" title="Play Word Unscramble Game Free Online" className="internal-link">free to play</Link>,
         resets every day, and takes less than two minutes to get hooked. Your current
         streak is zero. The clock is already running. How far can you go?
       </p>
